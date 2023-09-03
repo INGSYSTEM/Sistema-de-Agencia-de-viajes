@@ -1249,16 +1249,16 @@
 										"$ref": "AAAAAAGKUusPemFa3NM="
 									},
 									"font": "Source Code Pro;13;0",
-									"left": 152,
-									"top": 423,
+									"left": 176,
+									"top": 421,
 									"width": 85.79986572265625,
 									"height": 13,
-									"alpha": -6.000630377698387,
-									"distance": 193.68014869882768,
+									"alpha": -6.124945008003618,
+									"distance": 190.3785702225962,
 									"hostEdge": {
 										"$ref": "AAAAAAGKUusPemFa3NM="
 									},
-									"text": "PUEDE TENER"
+									"text": "TIENE"
 								}
 							],
 							"font": "Source Code Pro;13;0",
@@ -1332,16 +1332,16 @@
 										"$ref": "AAAAAAGKUuuXbWF0PsY="
 									},
 									"font": "Source Code Pro;13;0",
-									"left": 584,
+									"left": 671,
 									"top": 663,
-									"width": 85.79986572265625,
+									"width": 132.59979248046875,
 									"height": 13,
-									"alpha": -0.09495169992221102,
-									"distance": 147.6651617681029,
+									"alpha": -0.054210397377599424,
+									"distance": 258.37956575549856,
 									"hostEdge": {
 										"$ref": "AAAAAAGKUuuXbWF0PsY="
 									},
-									"text": "PUEDE TENER"
+									"text": "PUEDE ADMINISTRAR"
 								}
 							],
 							"font": "Source Code Pro;13;0",
@@ -1424,7 +1424,7 @@
 								"_parent": {
 									"$ref": "AAAAAAGKUusPemFWf0o="
 								},
-								"name": "PUEDE TENER",
+								"name": "TIENE",
 								"reference": {
 									"$ref": "AAAAAAGKUuXyl2Eqquw="
 								}
@@ -1905,7 +1905,7 @@
 								"_parent": {
 									"$ref": "AAAAAAGKUuuXbGFw7NA="
 								},
-								"name": "PUEDE TENER",
+								"name": "PUEDE ADMINISTRAR",
 								"reference": {
 									"$ref": "AAAAAAGKUuXyl2Eqquw="
 								}

@@ -1,0 +1,66 @@
+@startuml
+
+Reservas "1...* " o-- "1 " Clientes : puede realizar
+Reservas "1 " o-- "1 " Viajes : Puede tener
+Viajes "1...* " o-- "1 " Empleados : Puede gestionar
+Empleados "1 " o-- "1 " Usuarios : Puede administrar
+Clientes "1 " o-- "1 " Usuarios : Tiene
+
+class Clientes{
+    -Id_cliente: int
+    -Nombre: String
+    -Apellido: String
+    -Genero: String
+    -Fecha_de_nacimiento: LocalDate
+    -Direccion: String
+    -Estado_o_provincia: String
+    -Codigo_postal: String
+    -Pais: String
+    -Numero_de_telefono: String
+    -Correo_electronico: String
+    -Id_usuario: Usuarios
+}
+
+class Reservas {
+    -Id_reserva: int
+    -Id_cliente: Clientes
+    -Id_Viaje: Viajes
+    -Fecha_de_reserva: LocalDate
+    -Fecha_de_viaje: LocalDate
+    -Destino: String
+    -Numero_de_pasajeros: int
+    -Estado_de_la_reserva: String
+    -Precio_total: double
+}
+
+class Viajes {
+    -Id_viaje: int
+    -Destino: String
+    -Fecha_de_salida: LocalDate
+    -Fecha_de_regreso: LocalDate
+    -Precio_por_pasajero: double
+    -Disponibilidad_de_plazas: String
+    -Descripcion_del_viaje: String
+    -Tipo_de_viaje: String
+    -Hotel: String
+    -Itinerario: String
+    -Id_empleados: Empleados
+}
+
+class Empleados {
+    -Id_empleados: int
+    -Nombre: String
+    -Apellido: String
+    -Puesto: String
+    -Fecha_de_contratacion: LocalDate
+    -Numero_de_telefono: String
+    -Correo_electronico: String
+    -Id_usuario: Usuarios
+}
+
+class Usuarios {
+    -Id_usuario: int
+    -Nombre_usuario: String
+    -contrasena_hash: String
+}
+@enduml

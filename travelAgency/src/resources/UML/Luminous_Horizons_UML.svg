@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="1226px" preserveAspectRatio="none" style="width:438px;height:1226px;background:#FFFFFF;" version="1.1" viewBox="0 0 438 1226" width="438px" zoomAndPan="magnify">
+    <defs/>
+    <g>
+        <!--class Reservas-->
+        <g id="elem_Reservas">
+            <rect codeLine="23" fill="#F1F1F1" height="206.4844" id="Reservas" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="218" x="84" y="7"/>
+            <ellipse cx="158.75" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M161.5156,18.875 Q161.6719,18.6563 161.8594,18.5469 Q162.0469,18.4375 162.2656,18.4375 Q162.6406,18.4375 162.875,18.7031 Q163.1094,18.9531 163.1094,19.5625 L163.1094,21.0156 Q163.1094,21.625 162.875,21.8906 Q162.6406,22.1563 162.2656,22.1563 Q161.9219,22.1563 161.7188,21.9531 Q161.5156,21.7656 161.4063,21.25 Q161.3594,20.8906 161.1719,20.7031 Q160.8438,20.3281 160.2344,20.1094 Q159.625,19.8906 159,19.8906 Q158.2344,19.8906 157.5938,20.2188 Q156.9688,20.5469 156.4688,21.2969 Q155.9844,22.0469 155.9844,23.0781 L155.9844,24.1719 Q155.9844,25.4063 156.875,26.2344 Q157.7656,27.0469 159.3594,27.0469 Q160.2969,27.0469 160.9531,26.7969 Q161.3438,26.6406 161.7656,26.2031 Q162.0313,25.9375 162.1719,25.8594 Q162.3281,25.7813 162.5313,25.7813 Q162.8594,25.7813 163.1094,26.0469 Q163.375,26.2969 163.375,26.6406 Q163.375,26.9844 163.0313,27.3906 Q162.5313,27.9688 161.7344,28.2969 Q160.6563,28.75 159.3594,28.75 Q157.8438,28.75 156.6406,28.125 Q155.6563,27.625 154.9688,26.5625 Q154.2813,25.4844 154.2813,24.2031 L154.2813,23.0469 Q154.2813,21.7188 154.8906,20.5781 Q155.5156,19.4219 156.6094,18.8125 Q157.7031,18.1875 158.9375,18.1875 Q159.6719,18.1875 160.3125,18.3594 Q160.9688,18.5156 161.5156,18.875 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="60" x="179.25" y="28.7285">Reservas</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="85" x2="301" y1="39" y2="39"/>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="92" y="50.3047"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="90" x="104" y="57.5332">Id_reserva: int</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="92" y="67.9141"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="119" x="104" y="75.1426">Id_cliente: Clientes</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="92" y="85.5234"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="96" x="104" y="92.752">Id_Viaje: Viajes</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="92" y="103.1328"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="192" x="104" y="110.3613">Fecha_de_reserva: LocalDate</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="92" y="120.7422"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="173" x="104" y="127.9707">Fecha_de_viaje: LocalDate</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="92" y="138.3516"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="93" x="104" y="145.5801">Destino: String</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="92" y="155.9609"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="166" x="104" y="163.1895">Numero_de_pasajeros: int</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="92" y="173.5703"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="188" x="104" y="180.7988">Estado_de_la_reserva: String</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="92" y="191.1797"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="126" x="104" y="198.4082">Precio_total: double</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="85" x2="301" y1="205.4844" y2="205.4844"/>
+        </g>
+        <!--class Clientes-->
+        <g id="elem_Clientes">
+            <rect codeLine="8" fill="#F1F1F1" height="259.3125" id="Clientes" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="238" x="7" y="563"/>
+            <ellipse cx="96.25" cy="579" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M99.0156,574.875 Q99.1719,574.6563 99.3594,574.5469 Q99.5469,574.4375 99.7656,574.4375 Q100.1406,574.4375 100.375,574.7031 Q100.6094,574.9531 100.6094,575.5625 L100.6094,577.0156 Q100.6094,577.625 100.375,577.8906 Q100.1406,578.1563 99.7656,578.1563 Q99.4219,578.1563 99.2188,577.9531 Q99.0156,577.7656 98.9063,577.25 Q98.8594,576.8906 98.6719,576.7031 Q98.3438,576.3281 97.7344,576.1094 Q97.125,575.8906 96.5,575.8906 Q95.7344,575.8906 95.0938,576.2188 Q94.4688,576.5469 93.9688,577.2969 Q93.4844,578.0469 93.4844,579.0781 L93.4844,580.1719 Q93.4844,581.4063 94.375,582.2344 Q95.2656,583.0469 96.8594,583.0469 Q97.7969,583.0469 98.4531,582.7969 Q98.8438,582.6406 99.2656,582.2031 Q99.5313,581.9375 99.6719,581.8594 Q99.8281,581.7813 100.0313,581.7813 Q100.3594,581.7813 100.6094,582.0469 Q100.875,582.2969 100.875,582.6406 Q100.875,582.9844 100.5313,583.3906 Q100.0313,583.9688 99.2344,584.2969 Q98.1563,584.75 96.8594,584.75 Q95.3438,584.75 94.1406,584.125 Q93.1563,583.625 92.4688,582.5625 Q91.7813,581.4844 91.7813,580.2031 L91.7813,579.0469 Q91.7813,577.7188 92.3906,576.5781 Q93.0156,575.4219 94.1094,574.8125 Q95.2031,574.1875 96.4375,574.1875 Q97.1719,574.1875 97.8125,574.3594 Q98.4688,574.5156 99.0156,574.875 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="51" x="116.75" y="584.7285">Clientes</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="244" y1="595" y2="595"/>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="606.3047"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="83" x="27" y="613.5332">Id_cliente: int</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="623.9141"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="94" x="27" y="631.1426">Nombre: String</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="641.5234"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="95" x="27" y="648.752">Apellido: String</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="659.1328"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="93" x="27" y="666.3613">Genero: String</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="676.7422"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="212" x="27" y="683.9707">Fecha_de_nacimiento: LocalDate</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="694.3516"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104" x="27" y="701.5801">Direccion: String</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="711.9609"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="170" x="27" y="719.1895">Estado_o_provincia: String</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="729.5703"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="136" x="27" y="736.7988">Codigo_postal: String</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="747.1797"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="72" x="27" y="754.4082">Pais: String</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="764.7891"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="177" x="27" y="772.0176">Numero_de_telefono: String</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="782.3984"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="166" x="27" y="789.627">Correo_electronico: String</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="800.0078"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="129" x="27" y="807.2363">Id_usuario: Usuarios</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="244" y1="814.3125" y2="814.3125"/>
+        </g>
+        <!--class Viajes-->
+        <g id="elem_Viajes">
+            <rect codeLine="35" fill="#F1F1F1" height="241.7031" id="Viajes" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="231" x="188.5" y="291"/>
+            <ellipse cx="280.75" cy="307" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M283.5156,302.875 Q283.6719,302.6563 283.8594,302.5469 Q284.0469,302.4375 284.2656,302.4375 Q284.6406,302.4375 284.875,302.7031 Q285.1094,302.9531 285.1094,303.5625 L285.1094,305.0156 Q285.1094,305.625 284.875,305.8906 Q284.6406,306.1563 284.2656,306.1563 Q283.9219,306.1563 283.7188,305.9531 Q283.5156,305.7656 283.4063,305.25 Q283.3594,304.8906 283.1719,304.7031 Q282.8438,304.3281 282.2344,304.1094 Q281.625,303.8906 281,303.8906 Q280.2344,303.8906 279.5938,304.2188 Q278.9688,304.5469 278.4688,305.2969 Q277.9844,306.0469 277.9844,307.0781 L277.9844,308.1719 Q277.9844,309.4063 278.875,310.2344 Q279.7656,311.0469 281.3594,311.0469 Q282.2969,311.0469 282.9531,310.7969 Q283.3438,310.6406 283.7656,310.2031 Q284.0313,309.9375 284.1719,309.8594 Q284.3281,309.7813 284.5313,309.7813 Q284.8594,309.7813 285.1094,310.0469 Q285.375,310.2969 285.375,310.6406 Q285.375,310.9844 285.0313,311.3906 Q284.5313,311.9688 283.7344,312.2969 Q282.6563,312.75 281.3594,312.75 Q279.8438,312.75 278.6406,312.125 Q277.6563,311.625 276.9688,310.5625 Q276.2813,309.4844 276.2813,308.2031 L276.2813,307.0469 Q276.2813,305.7188 276.8906,304.5781 Q277.5156,303.4219 278.6094,302.8125 Q279.7031,302.1875 280.9375,302.1875 Q281.6719,302.1875 282.3125,302.3594 Q282.9688,302.5156 283.5156,302.875 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="301.25" y="312.7285">Viajes</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="189.5" x2="418.5" y1="323" y2="323"/>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="196.5" y="334.3047"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="71" x="208.5" y="341.5332">Id_viaje: int</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="196.5" y="351.9141"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="93" x="208.5" y="359.1426">Destino: String</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="196.5" y="369.5234"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="181" x="208.5" y="376.752">Fecha_de_salida: LocalDate</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="196.5" y="387.1328"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="193" x="208.5" y="394.3613">Fecha_de_regreso: LocalDate</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="196.5" y="404.7422"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="183" x="208.5" y="411.9707">Precio_por_pasajero: double</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="196.5" y="422.3516"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="205" x="208.5" y="429.5801">Disponibilidad_de_plazas: String</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="196.5" y="439.9609"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="183" x="208.5" y="447.1895">Descripcion_del_viaje: String</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="196.5" y="457.5703"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="134" x="208.5" y="464.7988">Tipo_de_viaje: String</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="196.5" y="475.1797"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="77" x="208.5" y="482.4082">Hotel: String</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="196.5" y="492.7891"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="100" x="208.5" y="500.0176">Itinerario: String</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="196.5" y="510.3984"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="166" x="208.5" y="517.627">Id_empleados: Empleados</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="189.5" x2="418.5" y1="524.7031" y2="524.7031"/>
+        </g>
+        <!--class Empleados-->
+        <g id="elem_Empleados">
+            <rect codeLine="49" fill="#F1F1F1" height="188.875" id="Empleados" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="248" x="183" y="852"/>
+            <ellipse cx="267.75" cy="868" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M270.5156,863.875 Q270.6719,863.6563 270.8594,863.5469 Q271.0469,863.4375 271.2656,863.4375 Q271.6406,863.4375 271.875,863.7031 Q272.1094,863.9531 272.1094,864.5625 L272.1094,866.0156 Q272.1094,866.625 271.875,866.8906 Q271.6406,867.1563 271.2656,867.1563 Q270.9219,867.1563 270.7188,866.9531 Q270.5156,866.7656 270.4063,866.25 Q270.3594,865.8906 270.1719,865.7031 Q269.8438,865.3281 269.2344,865.1094 Q268.625,864.8906 268,864.8906 Q267.2344,864.8906 266.5938,865.2188 Q265.9688,865.5469 265.4688,866.2969 Q264.9844,867.0469 264.9844,868.0781 L264.9844,869.1719 Q264.9844,870.4063 265.875,871.2344 Q266.7656,872.0469 268.3594,872.0469 Q269.2969,872.0469 269.9531,871.7969 Q270.3438,871.6406 270.7656,871.2031 Q271.0313,870.9375 271.1719,870.8594 Q271.3281,870.7813 271.5313,870.7813 Q271.8594,870.7813 272.1094,871.0469 Q272.375,871.2969 272.375,871.6406 Q272.375,871.9844 272.0313,872.3906 Q271.5313,872.9688 270.7344,873.2969 Q269.6563,873.75 268.3594,873.75 Q266.8438,873.75 265.6406,873.125 Q264.6563,872.625 263.9688,871.5625 Q263.2813,870.4844 263.2813,869.2031 L263.2813,868.0469 Q263.2813,866.7188 263.8906,865.5781 Q264.5156,864.4219 265.6094,863.8125 Q266.7031,863.1875 267.9375,863.1875 Q268.6719,863.1875 269.3125,863.3594 Q269.9688,863.5156 270.5156,863.875 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="288.25" y="873.7285">Empleados</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="184" x2="430" y1="884" y2="884"/>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="191" y="895.3047"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="111" x="203" y="902.5332">Id_empleados: int</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="191" y="912.9141"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="94" x="203" y="920.1426">Nombre: String</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="191" y="930.5234"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="95" x="203" y="937.752">Apellido: String</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="191" y="948.1328"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="89" x="203" y="955.3613">Puesto: String</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="191" y="965.7422"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="222" x="203" y="972.9707">Fecha_de_contratacion: LocalDate</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="191" y="983.3516"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="177" x="203" y="990.5801">Numero_de_telefono: String</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="191" y="1000.9609"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="166" x="203" y="1008.1895">Correo_electronico: String</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="191" y="1018.5703"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="129" x="203" y="1025.7988">Id_usuario: Usuarios</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="184" x2="430" y1="1032.875" y2="1032.875"/>
+        </g>
+        <!--class Usuarios-->
+        <g id="elem_Usuarios">
+            <rect codeLine="60" fill="#F1F1F1" height="100.8281" id="Usuarios" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="181" x="53.5" y="1119"/>
+            <ellipse cx="112.25" cy="1135" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+            <path d="M115.0156,1130.875 Q115.1719,1130.6563 115.3594,1130.5469 Q115.5469,1130.4375 115.7656,1130.4375 Q116.1406,1130.4375 116.375,1130.7031 Q116.6094,1130.9531 116.6094,1131.5625 L116.6094,1133.0156 Q116.6094,1133.625 116.375,1133.8906 Q116.1406,1134.1563 115.7656,1134.1563 Q115.4219,1134.1563 115.2188,1133.9531 Q115.0156,1133.7656 114.9063,1133.25 Q114.8594,1132.8906 114.6719,1132.7031 Q114.3438,1132.3281 113.7344,1132.1094 Q113.125,1131.8906 112.5,1131.8906 Q111.7344,1131.8906 111.0938,1132.2188 Q110.4688,1132.5469 109.9688,1133.2969 Q109.4844,1134.0469 109.4844,1135.0781 L109.4844,1136.1719 Q109.4844,1137.4063 110.375,1138.2344 Q111.2656,1139.0469 112.8594,1139.0469 Q113.7969,1139.0469 114.4531,1138.7969 Q114.8438,1138.6406 115.2656,1138.2031 Q115.5313,1137.9375 115.6719,1137.8594 Q115.8281,1137.7813 116.0313,1137.7813 Q116.3594,1137.7813 116.6094,1138.0469 Q116.875,1138.2969 116.875,1138.6406 Q116.875,1138.9844 116.5313,1139.3906 Q116.0313,1139.9688 115.2344,1140.2969 Q114.1563,1140.75 112.8594,1140.75 Q111.3438,1140.75 110.1406,1140.125 Q109.1563,1139.625 108.4688,1138.5625 Q107.7813,1137.4844 107.7813,1136.2031 L107.7813,1135.0469 Q107.7813,1133.7188 108.3906,1132.5781 Q109.0156,1131.4219 110.1094,1130.8125 Q111.2031,1130.1875 112.4375,1130.1875 Q113.1719,1130.1875 113.8125,1130.3594 Q114.4688,1130.5156 115.0156,1130.875 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="132.75" y="1140.7285">Usuarios</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="54.5" x2="233.5" y1="1151" y2="1151"/>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="61.5" y="1162.3047"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="89" x="73.5" y="1169.5332">Id_usuario: int</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="61.5" y="1179.9141"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="149" x="73.5" y="1187.1426">Nombre_usuario: String</text>
+            <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="61.5" y="1197.5234"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="155" x="73.5" y="1204.752">contrasena_hash: String</text>
+            <line style="stroke:#181818;stroke-width:0.5;" x1="54.5" x2="233.5" y1="1211.8281" y2="1211.8281"/>
+        </g>
+        <!--reverse link Reservas to Clientes-->
+        <g id="link_Reservas_Clientes">
+            <path codeLine="2" d="M154.61,225.76 C153.26,231.55 152.04,237.33 151,243 C131.39,349.61 125.71,472.67 124.61,562.89 " fill="none" id="Reservas-backto-Clientes" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="none" points="157.76,213.04,152.4333,217.9007,154.8713,224.6871,160.198,219.8265,157.76,213.04" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="81" x="152" y="257.4951">puede realizar</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="24" x="125.9901" y="235.0315">1...*</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="113.1901" y="552.0007">1</text>
+        </g>
+        <!--reverse link Reservas to Viajes-->
+        <g id="link_Reservas_Viajes">
+            <path codeLine="3" d="M235.49,225.83 C243.38,247.15 251.64,269.48 259.58,290.96 " fill="none" id="Reservas-backto-Viajes" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="none" points="230.89,213.4,229.2208,220.4152,235.0543,224.6543,236.7236,217.639,230.89,213.4" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="70" x="250" y="257.4951">Puede tener</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="222.2686" y="235.0712">1</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="245.382" y="280.2093">1</text>
+        </g>
+        <!--reverse link Viajes to Empleados-->
+        <g id="link_Viajes_Empleados">
+            <path codeLine="4" d="M304.75,546.39 C305.29,641.55 306,767.16 306.47,851.84 " fill="none" id="Viajes-backto-Empleados" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="none" points="304.68,533.17,300.713,539.1919,304.7459,545.1698,308.7129,539.1479,304.68,533.17" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="94" x="308" y="697.9951">Puede gestionar</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="24" x="275.9099" y="554.1515">1...*</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="294.9895" y="841.1734">1</text>
+        </g>
+        <!--reverse link Empleados to Usuarios-->
+        <g id="link_Empleados_Usuarios">
+            <path codeLine="5" d="M229.98,1051.92 C212.75,1075.29 195.25,1099.02 180.57,1118.92 " fill="none" id="Empleados-backto-Usuarios" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="none" points="237.87,1041.22,231.0892,1043.6737,230.7462,1050.8767,237.527,1048.4229,237.87,1041.22" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="105" x="217" y="1085.4951">Puede administrar</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="221.3894" y="1062.2761">1</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="173.9392" y="1108.2141">1</text>
+        </g>
+        <!--reverse link Clientes to Usuarios-->
+        <g id="link_Clientes_Usuarios">
+            <path codeLine="6" d="M126,835.56 C126.63,898.53 128.25,973.51 132,1041 C133.43,1066.75 136.03,1095.34 138.44,1118.92 " fill="none" id="Clientes-backto-Usuarios" style="stroke:#181818;stroke-width:1.0;"/>
+            <polygon fill="none" points="125.88,822.31,121.933,828.345,125.9856,834.3095,129.9326,828.2746,125.88,822.31" style="stroke:#181818;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="31" x="133" y="951.9951">Tiene</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="114.5551" y="843.7734">1</text>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="125.8847" y="1108.2141">1</text>
+        </g>
+        <!--SRC=[jLJBRjim4BphAuGS0zX0hxe5IVe0YY18qrw5DRcrjw2u0adv42F_tfKeanATz12WEadxuineba_eqHt1rrUVjjljTNrLysOZ7_9oQmXjG5ytTJ-WnjeX67e1LptbfcN3Bu8_K_dZL1xGeglcuENu-wut29fpmnvz8BPoGCwjJ_Zf1t2qQ07TaIKVd3GblE_sF4i1LfKou7sYTwfgUJRVTAjYfAd9XXXyu6xd9F0ZEBBx6BlfqHZIl8v-6SaMiS-e3j1gR2qewiRPKl2T5PWx21XhxiYXKi9wtNhlWz1lkUqT7yagWdN-bZNj9SjIPzQfHo2_ZZmCdM0RWGGq-9ijbyESGsubfu9ZIwh8YpH35B59QbQlPnsJ6RAGBeOMGYxLFGkVCfD5cja-XNHfLA5RAZZ6vbBMqKebpwn33rww7Fi5n5booHh8nwwKbLz5t0QUDDSyx0nc7MQZPnLcPEc0Dp4b7bvsI_-3fyEzWBeqq0ogPvTO9MopmtmlFtL7utmziJVm0eL719nor8zEb19p1hyiUQQU5uelKrzPd5MOHhYYYwOfp8JdxMxo9P1rpBj_UglZ0xifLuKFx-cksChj4I3kO27k_zsST3ETBgiBcZcn71-nUxJG7i0VKlBrBm00]-->
+    </g>
+</svg>

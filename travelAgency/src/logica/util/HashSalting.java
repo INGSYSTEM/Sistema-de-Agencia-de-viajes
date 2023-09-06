@@ -58,7 +58,7 @@ public class HashSalting {
      * @return true o flase
      */
     
-    public static boolean validarContraseña(String contraseña, String hashSalteado) {
+    public static boolean validarContrasena(String contraseña, String hashSalteado) {
         try {
             String[] partes = hashSalteado.split(":");
             if (partes.length != 2) {

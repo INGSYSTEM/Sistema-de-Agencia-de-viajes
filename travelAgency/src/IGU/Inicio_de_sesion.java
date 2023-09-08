@@ -4,19 +4,24 @@
  */
 package IGU;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Juan Romero
  */
 public class Inicio_de_sesion extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form Inicio_de_sesion
      */
     public Inicio_de_sesion() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/favicon/luminous_horizons.png")).getImage());
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -40,6 +45,7 @@ public class Inicio_de_sesion extends javax.swing.JFrame {
         setTitle("INICIO DE SESIÓN | Luminous Horizons");
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setMinimumSize(new java.awt.Dimension(670, 687));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         LuminousHorizons.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/Luminous Horizons.png"))); // NOI18N
@@ -75,6 +81,11 @@ public class Inicio_de_sesion extends javax.swing.JFrame {
         btn_inicio_de_sesion.setText("Iniciar sesión");
         btn_inicio_de_sesion.setBorderPainted(false);
         btn_inicio_de_sesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_inicio_de_sesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_inicio_de_sesionActionPerformed(evt);
+            }
+        });
         jPanel1.add(btn_inicio_de_sesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 590, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/wave.png"))); // NOI18N
@@ -99,6 +110,21 @@ public class Inicio_de_sesion extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_inicio_de_sesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_inicio_de_sesionActionPerformed
+        /**
+         * Aquí vemos como se pude implementar una personalización de icono en un JOPTIONPANE
+         */
+        Icon icono = new ImageIcon(getClass().getResource("/icon/verificacion.png"));
+        JOptionPane.showMessageDialog(null, "Se incio sesión de manera exitosa", "Validación de credenciales",JOptionPane.INFORMATION_MESSAGE, icono);
+        /**
+         * Este procedimiento permite mostrar la ventana siguiente
+         */
+        Panel_de_control panel_de_control = new Panel_de_control();
+        panel_de_control.setVisible(true);
+        panel_de_control.setLocationRelativeTo(null);
+        dispose();
+    }//GEN-LAST:event_btn_inicio_de_sesionActionPerformed
 
     /**
      * @param args the command line arguments

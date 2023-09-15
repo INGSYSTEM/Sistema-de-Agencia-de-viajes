@@ -4,9 +4,15 @@
  */
 package IGU;
 
+import java.awt.Color;
 import javax.swing.Icon;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import logica.Usuarios;
+import static logica.util.HashSalting.generarHashSalteado;
 
 /**
  *
@@ -63,16 +69,38 @@ public class Inicio_de_sesion extends javax.swing.JFrame {
 
         inputUsuario.setBackground(new java.awt.Color(51, 51, 51));
         inputUsuario.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
-        inputUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        inputUsuario.setForeground(new java.awt.Color(102, 102, 102));
+        inputUsuario.setText("Ingresa tu usuario");
         inputUsuario.setToolTipText("Usuario");
         inputUsuario.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(226, 199, 153), 3, true), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+        inputUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                inputUsuarioMouseClicked(evt);
+            }
+        });
+        inputUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputUsuarioActionPerformed(evt);
+            }
+        });
         jPanel1.add(inputUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, 520, 40));
 
         inputPassword.setBackground(new java.awt.Color(51, 51, 51));
         inputPassword.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
-        inputPassword.setForeground(new java.awt.Color(255, 255, 255));
+        inputPassword.setForeground(new java.awt.Color(102, 102, 102));
+        inputPassword.setText("••••••••••");
         inputPassword.setToolTipText("Contraseña");
         inputPassword.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(226, 199, 153), 3, true)));
+        inputPassword.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                inputPasswordMouseClicked(evt);
+            }
+        });
+        inputPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputPasswordActionPerformed(evt);
+            }
+        });
         jPanel1.add(inputPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 500, 520, 40));
 
         btn_inicio_de_sesion.setBackground(new java.awt.Color(226, 199, 153));
@@ -112,11 +140,22 @@ public class Inicio_de_sesion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_inicio_de_sesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_inicio_de_sesionActionPerformed
-        /**
-         * Aquí vemos como se pude implementar una personalización de icono en un JOPTIONPANE
-         */
-        Icon icono = new ImageIcon(getClass().getResource("/icon/verificacion.png"));
-        JOptionPane.showMessageDialog(null, "Se incio sesión de manera exitosa", "Validación de credenciales",JOptionPane.INFORMATION_MESSAGE, icono);
+        Usuarios usuarios = new Usuarios(inputUsuario.getText(), generarHashSalteado(String.valueOf(inputPassword.getPassword())));
+        String rpta = null;
+        try {
+            rpta = usuarios.Autenticar();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Inicio_de_sesion.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Inicio_de_sesion.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if(rpta.equals("")) {
+            /**
+            * Aquí vemos como se pude implementar una personalización de icono en un JOPTIONPANE
+            */
+            Icon icono = new ImageIcon(getClass().getResource("/icon/verificacion.png"));
+            JOptionPane.showMessageDialog(null, "Se incio sesión de manera exitosa, " + inputUsuario.getText() + " ¡Bienvenido!", "Validación de credenciales",JOptionPane.INFORMATION_MESSAGE, icono);
+        }
         /**
          * Este procedimiento permite mostrar la ventana siguiente
          */
@@ -125,6 +164,36 @@ public class Inicio_de_sesion extends javax.swing.JFrame {
         panel_de_control.setLocationRelativeTo(null);
         dispose();
     }//GEN-LAST:event_btn_inicio_de_sesionActionPerformed
+
+    private void inputUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputUsuarioActionPerformed
+
+    private void inputUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inputUsuarioMouseClicked
+        if (inputUsuario.getText().equals("Ingresa tu usuario")){
+            inputUsuario.setText("");
+            inputUsuario.setForeground(Color.WHITE);
+        }
+        if(String.valueOf(inputPassword.getPassword()).isEmpty()){
+            inputPassword.setText("••••••••••");
+            inputPassword.setForeground(Color.GRAY);
+        }
+    }//GEN-LAST:event_inputUsuarioMouseClicked
+
+    private void inputPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputPasswordActionPerformed
+
+    private void inputPasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inputPasswordMouseClicked
+        if (String.valueOf(inputPassword.getPassword()).equals("••••••••••")) {
+            inputPassword.setText("");
+            inputPassword.setForeground(Color.WHITE);
+        }
+        if (inputUsuario.getText().isEmpty()) {
+            inputUsuario.setText("Ingresa tu usuario");
+            inputUsuario.setForeground(Color.GRAY);
+        }
+    }//GEN-LAST:event_inputPasswordMouseClicked
 
     /**
      * @param args the command line arguments

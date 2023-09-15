@@ -49,6 +49,8 @@ public class Panel_de_control extends javax.swing.JFrame {
         btnEmpleados.setForeground(new java.awt.Color(255, 255, 255));
         btnEmpleados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/clientes.png"))); // NOI18N
         btnEmpleados.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(192, 130, 97), 3, true), "Clientes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
+        btnEmpleados.setContentAreaFilled(false);
+        btnEmpleados.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         wave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/wave.png"))); // NOI18N
 
@@ -57,24 +59,32 @@ public class Panel_de_control extends javax.swing.JFrame {
         btnEmpleados1.setForeground(new java.awt.Color(255, 255, 255));
         btnEmpleados1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/empleados.png"))); // NOI18N
         btnEmpleados1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(192, 130, 97), 3, true), "Empleados", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
+        btnEmpleados1.setContentAreaFilled(false);
+        btnEmpleados1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         btnEmpleados2.setBackground(new java.awt.Color(51, 51, 51));
         btnEmpleados2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnEmpleados2.setForeground(new java.awt.Color(255, 255, 255));
         btnEmpleados2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/reserva.png"))); // NOI18N
         btnEmpleados2.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(192, 130, 97), 3, true), "Reservas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
+        btnEmpleados2.setContentAreaFilled(false);
+        btnEmpleados2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         btnEmpleados3.setBackground(new java.awt.Color(51, 51, 51));
         btnEmpleados3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnEmpleados3.setForeground(new java.awt.Color(255, 255, 255));
         btnEmpleados3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/usuario.png"))); // NOI18N
         btnEmpleados3.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(192, 130, 97), 3, true), "Usuarios", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
+        btnEmpleados3.setContentAreaFilled(false);
+        btnEmpleados3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         btnEmpleados4.setBackground(new java.awt.Color(51, 51, 51));
         btnEmpleados4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnEmpleados4.setForeground(new java.awt.Color(255, 255, 255));
         btnEmpleados4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/viajes.png"))); // NOI18N
         btnEmpleados4.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(192, 130, 97), 3, true), "Viajes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
+        btnEmpleados4.setContentAreaFilled(false);
+        btnEmpleados4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         LabelDerechosDeAutor.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         LabelDerechosDeAutor.setForeground(new java.awt.Color(153, 153, 153));

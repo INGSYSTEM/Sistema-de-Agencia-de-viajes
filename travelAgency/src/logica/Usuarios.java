@@ -18,16 +18,17 @@ public class Usuarios {
     
     public String Autenticar() throws ClassNotFoundException, SQLException {
         String rpta = "";
+        ConexionDB conexion = new ConexionDB();
         Statement st;
         ResultSet rs;
-        String ConsultaSql = "SELECT * FROM Usuarios WHERE Nombre_usuario = '" + Nombre_usuario + "' AND Contrasena_hash = '" + Contrasena_hash + "'";
+        String ConsultaSql = "SELECT * FROM Usuarios WHERE Nombre_de_usuario = '" + Nombre_usuario + "' AND Contrasena_hash = '" + Contrasena_hash + "'";
         try {
-            st = ConexionDB.connection.createStatement();
+            st = conexion.connection.createStatement();
             rs = st.executeQuery(ConsultaSql);
             if(rs.next()) {
                 rpta = "se conectó: " + rs.getNString("Nombre");
             }
-            ConexionDB.connection.close();
+            conexion.connection.close();
         } catch(SQLException e) {
             System.err.println("error: " + e);
         }

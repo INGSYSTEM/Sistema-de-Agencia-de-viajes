@@ -46,6 +46,7 @@ public class Inicio_de_sesion extends javax.swing.JFrame {
         btn_inicio_de_sesion = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         LabelDerechosDeAutor = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("INICIO DE SESIÓN | Luminous Horizons");
@@ -72,7 +73,7 @@ public class Inicio_de_sesion extends javax.swing.JFrame {
         inputUsuario.setForeground(new java.awt.Color(102, 102, 102));
         inputUsuario.setText("Ingresa tu usuario");
         inputUsuario.setToolTipText("Usuario");
-        inputUsuario.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(226, 199, 153), 3, true), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+        inputUsuario.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(226, 199, 153), 3, true), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
         inputUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 inputUsuarioMouseClicked(evt);
@@ -114,7 +115,7 @@ public class Inicio_de_sesion extends javax.swing.JFrame {
                 btn_inicio_de_sesionActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_inicio_de_sesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 590, -1, -1));
+        jPanel1.add(btn_inicio_de_sesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 600, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/wave.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 140));
@@ -123,6 +124,19 @@ public class Inicio_de_sesion extends javax.swing.JFrame {
         LabelDerechosDeAutor.setForeground(new java.awt.Color(153, 153, 153));
         LabelDerechosDeAutor.setText("©CopyRigth 2023 Luminous Horizons");
         jPanel1.add(LabelDerechosDeAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 660, -1, -1));
+
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Recuperar contraseña");
+        jButton1.setBorder(null);
+        jButton1.setContentAreaFilled(false);
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 550, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -195,6 +209,10 @@ public class Inicio_de_sesion extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_inputPasswordMouseClicked
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -236,6 +254,7 @@ public class Inicio_de_sesion extends javax.swing.JFrame {
     private javax.swing.JButton btn_inicio_de_sesion;
     private javax.swing.JPasswordField inputPassword;
     private javax.swing.JTextField inputUsuario;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelPassword;

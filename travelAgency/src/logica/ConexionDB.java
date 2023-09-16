@@ -12,7 +12,7 @@ public class ConexionDB {
     public ConexionDB() throws ClassNotFoundException, SQLException {
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         String url = "jdbc:sqlserver://localhost:1433;database=LuminousHorizons";
-        connection = DriverManager.getConnection(url, "sa", "Admin21");
+        connection = DriverManager.getConnection(url, "TestLuminousHorizons", "Admin");
     }
     
 }

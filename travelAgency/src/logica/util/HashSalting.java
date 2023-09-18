@@ -117,4 +117,11 @@ public class HashSalting {
         }
         return byteArray;
     }
+    /**
+     * Nos permite hacer un test de hash-salting.
+     * @param args
+     */
+    public static void main(String[] args) {
+        System.out.println(generarHashSalteado("PASSWORD"));
+    }
 }

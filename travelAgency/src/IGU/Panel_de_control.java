@@ -32,8 +32,11 @@ public class Panel_de_control extends javax.swing.JFrame {
         btnEmpleados3 = new javax.swing.JButton();
         btnEmpleados4 = new javax.swing.JButton();
         LabelDerechosDeAutor = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        Menu = new javax.swing.JPanel();
         avatarUser1 = new logica.util.AvatarUser();
+        jLabel1 = new javax.swing.JLabel();
+        btn_salir = new swing.ButtonGradient();
+        buttonGradient1 = new swing.ButtonGradient();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Panel de control");
@@ -85,28 +88,36 @@ public class Panel_de_control extends javax.swing.JFrame {
         LabelDerechosDeAutor.setForeground(new java.awt.Color(153, 153, 153));
         LabelDerechosDeAutor.setText("©CopyRigth 2023 Luminous Horizons");
 
-        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
+        Menu.setBackground(new java.awt.Color(0, 0, 0));
+        Menu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         avatarUser1.setBackground(new java.awt.Color(255, 255, 255));
         avatarUser1.setBorderSize(3);
         avatarUser1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/user_hombre.png"))); // NOI18N
+        Menu.add(avatarUser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 156, 158));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addComponent(avatarUser1, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(59, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addComponent(avatarUser1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Nombre");
+        Menu.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, -1, -1));
+
+        btn_salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/cerrar-sesion.png"))); // NOI18N
+        btn_salir.setText("           Cerrar sesión");
+        btn_salir.setColor1(new java.awt.Color(0, 0, 0));
+        btn_salir.setColor2(new java.awt.Color(102, 102, 102));
+        btn_salir.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_salirActionPerformed(evt);
+            }
+        });
+        Menu.add(btn_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 600, 200, 30));
+
+        buttonGradient1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/cerrar.png"))); // NOI18N
+        buttonGradient1.setColor1(new java.awt.Color(0, 0, 0));
+        buttonGradient1.setColor2(new java.awt.Color(0, 0, 0));
+        Menu.add(buttonGradient1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 35, 35));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -129,8 +140,8 @@ public class Panel_de_control extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(338, 338, 338)
                         .addComponent(LabelDerechosDeAutor)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addComponent(Menu, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,19 +154,17 @@ public class Panel_de_control extends javax.swing.JFrame {
                     .addComponent(btnEmpleados2, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
                 .addComponent(btnEmpleados4, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 201, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(LabelDerechosDeAutor)
                 .addGap(22, 22, 22))
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Menu, javax.swing.GroupLayout.DEFAULT_SIZE, 667, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -165,16 +174,26 @@ public class Panel_de_control extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
+        Inicio_de_sesion inicio_de_sesion = new Inicio_de_sesion();
+        inicio_de_sesion.setVisible(true);
+        inicio_de_sesion.setLocationRelativeTo(null);
+        dispose();
+    }//GEN-LAST:event_btn_salirActionPerformed
+
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LabelDerechosDeAutor;
+    private javax.swing.JPanel Menu;
     private logica.util.AvatarUser avatarUser1;
     private javax.swing.JButton btnEmpleados;
     private javax.swing.JButton btnEmpleados1;
     private javax.swing.JButton btnEmpleados2;
     private javax.swing.JButton btnEmpleados3;
     private javax.swing.JButton btnEmpleados4;
+    private swing.ButtonGradient btn_salir;
+    private swing.ButtonGradient buttonGradient1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }

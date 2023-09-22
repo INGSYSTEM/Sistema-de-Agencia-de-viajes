@@ -40,12 +40,14 @@ public class Panel_de_control extends javax.swing.JFrame {
         btn_configuraciones = new swing.ButtonGradient();
         btn_analisis = new swing.ButtonGradient();
         btn_informes = new swing.ButtonGradient();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Panel de control");
         setMinimumSize(new java.awt.Dimension(670, 687));
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnEmpleados.setBackground(new java.awt.Color(51, 51, 51));
         btnEmpleados.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -54,6 +56,7 @@ public class Panel_de_control extends javax.swing.JFrame {
         btnEmpleados.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(192, 130, 97), 3, true), "Clientes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
         btnEmpleados.setContentAreaFilled(false);
         btnEmpleados.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(btnEmpleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 120, 180, 170));
 
         btnEmpleados1.setBackground(new java.awt.Color(51, 51, 51));
         btnEmpleados1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -62,6 +65,7 @@ public class Panel_de_control extends javax.swing.JFrame {
         btnEmpleados1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(192, 130, 97), 3, true), "Empleados", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
         btnEmpleados1.setContentAreaFilled(false);
         btnEmpleados1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(btnEmpleados1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, 180, 170));
 
         btnEmpleados2.setBackground(new java.awt.Color(51, 51, 51));
         btnEmpleados2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -70,6 +74,7 @@ public class Panel_de_control extends javax.swing.JFrame {
         btnEmpleados2.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(192, 130, 97), 3, true), "Reservas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
         btnEmpleados2.setContentAreaFilled(false);
         btnEmpleados2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(btnEmpleados2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 340, 180, 170));
 
         btnEmpleados3.setBackground(new java.awt.Color(51, 51, 51));
         btnEmpleados3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -78,6 +83,7 @@ public class Panel_de_control extends javax.swing.JFrame {
         btnEmpleados3.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(192, 130, 97), 3, true), "Usuarios", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
         btnEmpleados3.setContentAreaFilled(false);
         btnEmpleados3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(btnEmpleados3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, 180, 170));
 
         btnEmpleados4.setBackground(new java.awt.Color(51, 51, 51));
         btnEmpleados4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -86,12 +92,14 @@ public class Panel_de_control extends javax.swing.JFrame {
         btnEmpleados4.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(192, 130, 97), 3, true), "Viajes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
         btnEmpleados4.setContentAreaFilled(false);
         btnEmpleados4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(btnEmpleados4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 180, 170));
 
         LabelDerechosDeAutor.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         LabelDerechosDeAutor.setForeground(new java.awt.Color(153, 153, 153));
         LabelDerechosDeAutor.setText("©CopyRigth 2023 Luminous Horizons");
+        jPanel1.add(LabelDerechosDeAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 630, -1, -1));
 
-        Menu.setBackground(new java.awt.Color(0, 0, 0));
+        Menu.setBackground(new java.awt.Color(192, 130, 97));
         Menu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         avatarUser1.setBackground(new java.awt.Color(255, 255, 255));
@@ -105,9 +113,9 @@ public class Panel_de_control extends javax.swing.JFrame {
         jLabel1.setText("Nombre");
         Menu.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, -1, -1));
 
-        btn_panel_control.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/cerrar-sesion.png"))); // NOI18N
+        btn_panel_control.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/panel-de-control.png"))); // NOI18N
         btn_panel_control.setText("            Panel de control");
-        btn_panel_control.setColor1(new java.awt.Color(0, 0, 0));
+        btn_panel_control.setColor1(new java.awt.Color(154, 59, 59));
         btn_panel_control.setColor2(new java.awt.Color(102, 102, 102));
         btn_panel_control.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_panel_control.addActionListener(new java.awt.event.ActionListener() {
@@ -119,7 +127,7 @@ public class Panel_de_control extends javax.swing.JFrame {
 
         btn_salir1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/cerrar-sesion.png"))); // NOI18N
         btn_salir1.setText("           Cerrar sesión");
-        btn_salir1.setColor1(new java.awt.Color(0, 0, 0));
+        btn_salir1.setColor1(new java.awt.Color(154, 59, 59));
         btn_salir1.setColor2(new java.awt.Color(102, 102, 102));
         btn_salir1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_salir1.addActionListener(new java.awt.event.ActionListener() {
@@ -129,9 +137,9 @@ public class Panel_de_control extends javax.swing.JFrame {
         });
         Menu.add(btn_salir1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 600, 200, 30));
 
-        btn_configuraciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/cerrar-sesion.png"))); // NOI18N
+        btn_configuraciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/configuracion.png"))); // NOI18N
         btn_configuraciones.setText("         Configuraciones");
-        btn_configuraciones.setColor1(new java.awt.Color(0, 0, 0));
+        btn_configuraciones.setColor1(new java.awt.Color(154, 59, 59));
         btn_configuraciones.setColor2(new java.awt.Color(102, 102, 102));
         btn_configuraciones.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_configuraciones.addActionListener(new java.awt.event.ActionListener() {
@@ -141,9 +149,9 @@ public class Panel_de_control extends javax.swing.JFrame {
         });
         Menu.add(btn_configuraciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 470, 200, 30));
 
-        btn_analisis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/cerrar-sesion.png"))); // NOI18N
+        btn_analisis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/analisis-de-mercado.png"))); // NOI18N
         btn_analisis.setText("                        Análisis");
-        btn_analisis.setColor1(new java.awt.Color(0, 0, 0));
+        btn_analisis.setColor1(new java.awt.Color(154, 59, 59));
         btn_analisis.setColor2(new java.awt.Color(102, 102, 102));
         btn_analisis.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_analisis.addActionListener(new java.awt.event.ActionListener() {
@@ -153,9 +161,9 @@ public class Panel_de_control extends javax.swing.JFrame {
         });
         Menu.add(btn_analisis, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 410, 200, 30));
 
-        btn_informes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/cerrar-sesion.png"))); // NOI18N
+        btn_informes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/informe-seo.png"))); // NOI18N
         btn_informes.setText("                       Informes");
-        btn_informes.setColor1(new java.awt.Color(0, 0, 0));
+        btn_informes.setColor1(new java.awt.Color(154, 59, 59));
         btn_informes.setColor2(new java.awt.Color(102, 102, 102));
         btn_informes.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_informes.addActionListener(new java.awt.event.ActionListener() {
@@ -165,46 +173,10 @@ public class Panel_de_control extends javax.swing.JFrame {
         });
         Menu.add(btn_informes, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 200, 30));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnEmpleados4, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(btnEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(31, 31, 31)
-                                .addComponent(btnEmpleados1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(38, 38, 38)
-                                .addComponent(btnEmpleados3, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(43, 43, 43)
-                                .addComponent(btnEmpleados2, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(338, 338, 338)
-                        .addComponent(LabelDerechosDeAutor)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                .addComponent(Menu, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnEmpleados1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnEmpleados3, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnEmpleados2, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
-                .addComponent(btnEmpleados4, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(LabelDerechosDeAutor)
-                .addGap(22, 22, 22))
-            .addComponent(Menu, javax.swing.GroupLayout.DEFAULT_SIZE, 667, Short.MAX_VALUE)
-        );
+        jPanel1.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(759, 0, 289, 670));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/avion.png"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 540, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -221,14 +193,14 @@ public class Panel_de_control extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_panel_controlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_panel_controlActionPerformed
+        
+    }//GEN-LAST:event_btn_panel_controlActionPerformed
+
+    private void btn_salir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salir1ActionPerformed
         Inicio_de_sesion inicio_de_sesion = new Inicio_de_sesion();
         inicio_de_sesion.setVisible(true);
         inicio_de_sesion.setLocationRelativeTo(null);
         dispose();
-    }//GEN-LAST:event_btn_panel_controlActionPerformed
-
-    private void btn_salir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salir1ActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_btn_salir1ActionPerformed
 
     private void btn_configuracionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_configuracionesActionPerformed
@@ -259,6 +231,7 @@ public class Panel_de_control extends javax.swing.JFrame {
     private swing.ButtonGradient btn_panel_control;
     private swing.ButtonGradient btn_salir1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

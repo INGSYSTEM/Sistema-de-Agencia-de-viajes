@@ -35,8 +35,11 @@ public class Panel_de_control extends javax.swing.JFrame {
         Menu = new javax.swing.JPanel();
         avatarUser1 = new logica.util.AvatarUser();
         jLabel1 = new javax.swing.JLabel();
-        btn_salir = new swing.ButtonGradient();
-        buttonGradient1 = new swing.ButtonGradient();
+        btn_panel_control = new swing.ButtonGradient();
+        btn_salir1 = new swing.ButtonGradient();
+        btn_configuraciones = new swing.ButtonGradient();
+        btn_analisis = new swing.ButtonGradient();
+        btn_informes = new swing.ButtonGradient();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Panel de control");
@@ -102,22 +105,65 @@ public class Panel_de_control extends javax.swing.JFrame {
         jLabel1.setText("Nombre");
         Menu.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, -1, -1));
 
-        btn_salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/cerrar-sesion.png"))); // NOI18N
-        btn_salir.setText("           Cerrar sesión");
-        btn_salir.setColor1(new java.awt.Color(0, 0, 0));
-        btn_salir.setColor2(new java.awt.Color(102, 102, 102));
-        btn_salir.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btn_salir.addActionListener(new java.awt.event.ActionListener() {
+        btn_panel_control.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/cerrar-sesion.png"))); // NOI18N
+        btn_panel_control.setText("            Panel de control");
+        btn_panel_control.setColor1(new java.awt.Color(0, 0, 0));
+        btn_panel_control.setColor2(new java.awt.Color(102, 102, 102));
+        btn_panel_control.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_panel_control.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_salirActionPerformed(evt);
+                btn_panel_controlActionPerformed(evt);
             }
         });
-        Menu.add(btn_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 600, 200, 30));
+        Menu.add(btn_panel_control, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 200, 30));
 
-        buttonGradient1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/cerrar.png"))); // NOI18N
-        buttonGradient1.setColor1(new java.awt.Color(0, 0, 0));
-        buttonGradient1.setColor2(new java.awt.Color(0, 0, 0));
-        Menu.add(buttonGradient1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 35, 35));
+        btn_salir1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/cerrar-sesion.png"))); // NOI18N
+        btn_salir1.setText("           Cerrar sesión");
+        btn_salir1.setColor1(new java.awt.Color(0, 0, 0));
+        btn_salir1.setColor2(new java.awt.Color(102, 102, 102));
+        btn_salir1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_salir1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_salir1ActionPerformed(evt);
+            }
+        });
+        Menu.add(btn_salir1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 600, 200, 30));
+
+        btn_configuraciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/cerrar-sesion.png"))); // NOI18N
+        btn_configuraciones.setText("         Configuraciones");
+        btn_configuraciones.setColor1(new java.awt.Color(0, 0, 0));
+        btn_configuraciones.setColor2(new java.awt.Color(102, 102, 102));
+        btn_configuraciones.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_configuraciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_configuracionesActionPerformed(evt);
+            }
+        });
+        Menu.add(btn_configuraciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 470, 200, 30));
+
+        btn_analisis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/cerrar-sesion.png"))); // NOI18N
+        btn_analisis.setText("                        Análisis");
+        btn_analisis.setColor1(new java.awt.Color(0, 0, 0));
+        btn_analisis.setColor2(new java.awt.Color(102, 102, 102));
+        btn_analisis.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_analisis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_analisisActionPerformed(evt);
+            }
+        });
+        Menu.add(btn_analisis, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 410, 200, 30));
+
+        btn_informes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/cerrar-sesion.png"))); // NOI18N
+        btn_informes.setText("                       Informes");
+        btn_informes.setColor1(new java.awt.Color(0, 0, 0));
+        btn_informes.setColor2(new java.awt.Color(102, 102, 102));
+        btn_informes.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_informes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_informesActionPerformed(evt);
+            }
+        });
+        Menu.add(btn_informes, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 200, 30));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -174,12 +220,28 @@ public class Panel_de_control extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
+    private void btn_panel_controlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_panel_controlActionPerformed
         Inicio_de_sesion inicio_de_sesion = new Inicio_de_sesion();
         inicio_de_sesion.setVisible(true);
         inicio_de_sesion.setLocationRelativeTo(null);
         dispose();
-    }//GEN-LAST:event_btn_salirActionPerformed
+    }//GEN-LAST:event_btn_panel_controlActionPerformed
+
+    private void btn_salir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salir1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_salir1ActionPerformed
+
+    private void btn_configuracionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_configuracionesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_configuracionesActionPerformed
+
+    private void btn_analisisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_analisisActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_analisisActionPerformed
+
+    private void btn_informesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_informesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_informesActionPerformed
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -191,8 +253,11 @@ public class Panel_de_control extends javax.swing.JFrame {
     private javax.swing.JButton btnEmpleados2;
     private javax.swing.JButton btnEmpleados3;
     private javax.swing.JButton btnEmpleados4;
-    private swing.ButtonGradient btn_salir;
-    private swing.ButtonGradient buttonGradient1;
+    private swing.ButtonGradient btn_analisis;
+    private swing.ButtonGradient btn_configuraciones;
+    private swing.ButtonGradient btn_informes;
+    private swing.ButtonGradient btn_panel_control;
+    private swing.ButtonGradient btn_salir1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

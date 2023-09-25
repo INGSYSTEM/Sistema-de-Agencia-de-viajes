@@ -2,14 +2,14 @@ CREATE DATABASE [LuminousHorizons]
 GO
 USE [LuminousHorizons]
 GO
-/****** Object:  User [TestLuminousHorizons]    Script Date: 24/09/2023 22:23:15 ******/
+/****** Object:  User [TestLuminousHorizons]    Script Date: 25/09/2023 15:32:44 ******/
 CREATE USER [TestLuminousHorizons] FOR LOGIN [TestLuminousHorizons] WITH DEFAULT_SCHEMA=[dbo]
 GO
 ALTER ROLE [db_datareader] ADD MEMBER [TestLuminousHorizons]
 GO
 ALTER ROLE [db_datawriter] ADD MEMBER [TestLuminousHorizons]
 GO
-/****** Object:  Table [dbo].[ASIENTO]    Script Date: 24/09/2023 22:23:16 ******/
+/****** Object:  Table [dbo].[ASIENTO]    Script Date: 25/09/2023 15:32:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -26,7 +26,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[CLIENTE]    Script Date: 24/09/2023 22:23:16 ******/
+/****** Object:  Table [dbo].[CLIENTE]    Script Date: 25/09/2023 15:32:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -45,7 +45,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[DESTINO]    Script Date: 24/09/2023 22:23:16 ******/
+/****** Object:  Table [dbo].[DESTINO]    Script Date: 25/09/2023 15:32:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -60,7 +60,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[RESERVA]    Script Date: 24/09/2023 22:23:16 ******/
+/****** Object:  Table [dbo].[RESERVA]    Script Date: 25/09/2023 15:32:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -76,7 +76,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[RESERVA Y DESTINO]    Script Date: 24/09/2023 22:23:16 ******/
+/****** Object:  Table [dbo].[RESERVA Y DESTINO]    Script Date: 25/09/2023 15:32:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -92,7 +92,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[VUELO]    Script Date: 24/09/2023 22:23:16 ******/
+/****** Object:  Table [dbo].[VUELO]    Script Date: 25/09/2023 15:32:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -113,13 +113,13 @@ PRIMARY KEY CLUSTERED
 GO
 SET IDENTITY_INSERT [dbo].[CLIENTE] ON 
 GO
-INSERT [dbo].[CLIENTE] ([id], [nombre], [apellido], [email], [usuario], [contrasena], [trabajaEmpresa]) VALUES (1, N'Juan Bladimir', N'Romero Collazos', N'juanromerocollazos@gmail.com', N'Admin', HASHBYTES('SHA2_256', '$Admin2023'), 3)
+INSERT [dbo].[CLIENTE] ([id], [nombre], [apellido], [email], [usuario], [contrasena], [trabajaEmpresa]) VALUES (1, N'Juan Bladimir', N'Romero Collazos', N'juanromerocollazos@gmail.com', N'Admin', 0x3ACA4A331944E44471E93EABED5F6933266B79F036A9FF3294AD79CC0692A807, 3)
 GO
 SET IDENTITY_INSERT [dbo].[CLIENTE] OFF
 GO
 SET ANSI_PADDING ON
 GO
-/****** Object:  Index [UQ__CLIENTE__9AFF8FC62978FEF0]    Script Date: 24/09/2023 22:23:17 ******/
+/****** Object:  Index [UQ__CLIENTE__9AFF8FC6E9569E92]    Script Date: 25/09/2023 15:32:45 ******/
 ALTER TABLE [dbo].[CLIENTE] ADD UNIQUE NONCLUSTERED 
 (
 	[usuario] ASC
@@ -127,7 +127,7 @@ ALTER TABLE [dbo].[CLIENTE] ADD UNIQUE NONCLUSTERED
 GO
 SET ANSI_PADDING ON
 GO
-/****** Object:  Index [UQ__CLIENTE__AB6E6164312E7EC3]    Script Date: 24/09/2023 22:23:17 ******/
+/****** Object:  Index [UQ__CLIENTE__AB6E61646AD9EF77]    Script Date: 25/09/2023 15:32:45 ******/
 ALTER TABLE [dbo].[CLIENTE] ADD UNIQUE NONCLUSTERED 
 (
 	[email] ASC

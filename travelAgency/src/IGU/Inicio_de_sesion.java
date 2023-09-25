@@ -7,12 +7,11 @@ package IGU;
 import java.awt.Color;
 import javax.swing.Icon;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import logica.Usuarios;
-import static logica.util.HashSalting.generarHashSalteado;
+import logica.Cliente;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -154,29 +153,33 @@ public class Inicio_de_sesion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_inicio_de_sesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_inicio_de_sesionActionPerformed
-        Usuarios usuarios = new Usuarios(inputUsuario.getText(), generarHashSalteado(String.valueOf(inputPassword.getPassword())));
-        String rpta = null;
-        try {
-            rpta = usuarios.Autenticar();
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Inicio_de_sesion.class.getName()).log(Level.SEVERE, null, ex);
+        try {                                                     
+            Cliente cliente = new Cliente(inputUsuario.getText(), String.valueOf(inputPassword.getPassword()));
+            String rpta = null;
+            rpta = cliente.Autenticar();
+            System.out.println(rpta);
+            String nombre = cliente.obtenerNombreClientePorUsuario(inputUsuario.getText());
+            if(rpta.equals("")) {
+                Icon icono = new ImageIcon(getClass().getResource("/icon/verificacion.png"));
+                JOptionPane.showMessageDialog(null, "Se incio sesión de manera exitosa, " + nombre + " ¡Bienvenido!", "Validación de credenciales",JOptionPane.INFORMATION_MESSAGE, icono);
+                /**
+                * Este procedimiento permite mostrar la ventana siguiente
+                */
+                Panel_de_control panel_de_control = new Panel_de_control();
+                panel_de_control.setVisible(true);
+                panel_de_control.setLocationRelativeTo(null);
+                panel_de_control.ColocarNombre(nombre);
+                dispose();
+            }else {
+                Icon icono = new ImageIcon(getClass().getResource("/icon/error.png"));
+                JOptionPane.showMessageDialog(null, "Usuario o clave incorrecta", "Validación de credenciales",JOptionPane.ERROR_MESSAGE, icono);
+            }
         } catch (SQLException ex) {
             Logger.getLogger(Inicio_de_sesion.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Inicio_de_sesion.class.getName()).log(Level.SEVERE, null, ex);
         }
-        if(rpta.equals("")) {
-            /**
-            * Aquí vemos como se pude implementar una personalización de icono en un JOPTIONPANE
-            */
-            Icon icono = new ImageIcon(getClass().getResource("/icon/verificacion.png"));
-            JOptionPane.showMessageDialog(null, "Se incio sesión de manera exitosa, " + inputUsuario.getText() + " ¡Bienvenido!", "Validación de credenciales",JOptionPane.INFORMATION_MESSAGE, icono);
-        }
-        /**
-         * Este procedimiento permite mostrar la ventana siguiente
-         */
-        Panel_de_control panel_de_control = new Panel_de_control();
-        panel_de_control.setVisible(true);
-        panel_de_control.setLocationRelativeTo(null);
-        dispose();
+        
     }//GEN-LAST:event_btn_inicio_de_sesionActionPerformed
 
     private void inputUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputUsuarioActionPerformed

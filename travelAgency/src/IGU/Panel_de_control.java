@@ -8,6 +8,10 @@ import javax.swing.ImageIcon;
  */
 public class Panel_de_control extends javax.swing.JFrame {
 
+    public void ColocarNombre(String Mensaje)
+    {
+        label_nombreUsuario.setText(Mensaje);
+    }
     /**
      * Creates new form Panel_de_control
      */
@@ -34,7 +38,7 @@ public class Panel_de_control extends javax.swing.JFrame {
         LabelDerechosDeAutor = new javax.swing.JLabel();
         Menu = new javax.swing.JPanel();
         avatarUser1 = new logica.util.AvatarUser();
-        jLabel1 = new javax.swing.JLabel();
+        label_nombreUsuario = new javax.swing.JLabel();
         btn_panel_control = new swing.ButtonGradient();
         btn_salir1 = new swing.ButtonGradient();
         btn_configuraciones = new swing.ButtonGradient();
@@ -107,11 +111,11 @@ public class Panel_de_control extends javax.swing.JFrame {
         avatarUser1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/user_hombre.png"))); // NOI18N
         Menu.add(avatarUser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 156, 158));
 
-        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Nombre");
-        Menu.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, -1, -1));
+        label_nombreUsuario.setBackground(new java.awt.Color(0, 0, 0));
+        label_nombreUsuario.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        label_nombreUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        label_nombreUsuario.setText("Nombre");
+        Menu.add(label_nombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, -1, -1));
 
         btn_panel_control.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/panel-de-control.png"))); // NOI18N
         btn_panel_control.setText("            Panel de control");
@@ -230,8 +234,8 @@ public class Panel_de_control extends javax.swing.JFrame {
     private swing.ButtonGradient btn_informes;
     private swing.ButtonGradient btn_panel_control;
     private swing.ButtonGradient btn_salir1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel label_nombreUsuario;
     // End of variables declaration//GEN-END:variables
 }

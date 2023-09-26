@@ -37,7 +37,7 @@ public class Panel_de_invitado extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btn_registrarse = new swing.ButtonGradient();
         jLabel2 = new javax.swing.JLabel();
-        panelRound1 = new test.PanelRound();
+        panel_de_busqueda = new test.PanelRound();
         calendario_regreso = new com.toedter.calendar.JCalendar();
         calendario_ida = new com.toedter.calendar.JCalendar();
         label_decha_de_ida = new javax.swing.JLabel();
@@ -89,65 +89,65 @@ public class Panel_de_invitado extends javax.swing.JFrame {
         jLabel2.setText("Descubre tu próximo viaje");
         panel_Principal.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 550, 280, -1));
 
-        panelRound1.setBackground(new java.awt.Color(255, 255, 255));
-        panelRound1.setRoundBottomLeft(50);
-        panelRound1.setRoundBottomRight(50);
-        panelRound1.setRoundTopLeft(50);
-        panelRound1.setRoundTopRight(50);
-        panelRound1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panel_de_busqueda.setBackground(new java.awt.Color(255, 255, 255));
+        panel_de_busqueda.setRoundBottomLeft(50);
+        panel_de_busqueda.setRoundBottomRight(50);
+        panel_de_busqueda.setRoundTopLeft(50);
+        panel_de_busqueda.setRoundTopRight(50);
+        panel_de_busqueda.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         calendario_regreso.setDecorationBackgroundColor(new java.awt.Color(241, 222, 201));
         calendario_regreso.setDecorationBordersVisible(true);
         calendario_regreso.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         calendario_regreso.setMinimumSize(new java.awt.Dimension(251, 180));
         calendario_regreso.setPreferredSize(new java.awt.Dimension(251, 180));
-        panelRound1.add(calendario_regreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 150, 440, 230));
+        panel_de_busqueda.add(calendario_regreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 150, 440, 230));
 
         calendario_ida.setDecorationBackgroundColor(new java.awt.Color(241, 222, 201));
         calendario_ida.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         calendario_ida.setMinimumSize(new java.awt.Dimension(251, 180));
         calendario_ida.setPreferredSize(new java.awt.Dimension(251, 180));
-        panelRound1.add(calendario_ida, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 440, 230));
+        panel_de_busqueda.add(calendario_ida, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 440, 230));
 
         label_decha_de_ida.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         label_decha_de_ida.setText("Fecha de ida");
-        panelRound1.add(label_decha_de_ida, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
+        panel_de_busqueda.add(label_decha_de_ida, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
 
         label_decha_de_regreso.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         label_decha_de_regreso.setText("Fecha de regreso");
-        panelRound1.add(label_decha_de_regreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 110, -1, -1));
+        panel_de_busqueda.add(label_decha_de_regreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 110, -1, -1));
 
         btn_registrarse1.setText("Buscar vuelos");
         btn_registrarse1.setColor1(new java.awt.Color(154, 59, 59));
         btn_registrarse1.setColor2(new java.awt.Color(51, 51, 51));
         btn_registrarse1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        panelRound1.add(btn_registrarse1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 400, -1, -1));
+        panel_de_busqueda.add(btn_registrarse1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 400, -1, -1));
 
         label_destino.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         label_destino.setText("Ingresa el destino");
-        panelRound1.add(label_destino, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 60, -1, 30));
+        panel_de_busqueda.add(label_destino, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 60, -1, 30));
 
-        panelRound1.add(cb_destino, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 60, 150, 30));
+        panel_de_busqueda.add(cb_destino, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 60, 150, 30));
 
-        panelRound1.add(cb_origen, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 20, 150, 30));
+        panel_de_busqueda.add(cb_origen, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 20, 150, 30));
 
         label_origen.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         label_origen.setText("Ingresa el origen");
-        panelRound1.add(label_origen, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 20, -1, 30));
-        panelRound1.add(Spinner_cantidad_pasajeros, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 20, -1, -1));
+        panel_de_busqueda.add(label_origen, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 20, -1, 30));
+        panel_de_busqueda.add(Spinner_cantidad_pasajeros, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 20, -1, -1));
 
         label_cantidad_de_pasajeros.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         label_cantidad_de_pasajeros.setText("Cantidad de pasajeros");
-        panelRound1.add(label_cantidad_de_pasajeros, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 16, -1, 30));
+        panel_de_busqueda.add(label_cantidad_de_pasajeros, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 16, -1, 30));
 
         cb_tipo_de_viaje.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Económico", "Premium económico", "Premium empresarial" }));
-        panelRound1.add(cb_tipo_de_viaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, 201, -1));
+        panel_de_busqueda.add(cb_tipo_de_viaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, 201, -1));
 
         cb_forma_de_viaje.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Solo ida", "Ida y Vuelta" }));
         cb_forma_de_viaje.setSelectedIndex(1);
-        panelRound1.add(cb_forma_de_viaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 201, -1));
+        panel_de_busqueda.add(cb_forma_de_viaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 201, -1));
 
-        panel_Principal.add(panelRound1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 980, 450));
+        panel_Principal.add(panel_de_busqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 980, 450));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -190,7 +190,7 @@ public class Panel_de_invitado extends javax.swing.JFrame {
     private javax.swing.JLabel label_decha_de_regreso;
     private javax.swing.JLabel label_destino;
     private javax.swing.JLabel label_origen;
-    private test.PanelRound panelRound1;
     private javax.swing.JPanel panel_Principal;
+    private test.PanelRound panel_de_busqueda;
     // End of variables declaration//GEN-END:variables
 }

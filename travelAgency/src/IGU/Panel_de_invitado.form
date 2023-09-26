@@ -133,7 +133,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Container class="test.PanelRound" name="panelRound1">
+        <Container class="test.PanelRound" name="panel_de_busqueda">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>

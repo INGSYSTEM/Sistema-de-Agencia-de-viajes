@@ -11,12 +11,15 @@ package logica;
 class Persona {
     private String nombre;
     private String apellido;
+    private String genero;    
     private String email;
     
     // Constructor
-    public Persona(String nombre, String apellido, String email) {
+
+    public Persona(String nombre, String apellido, String genero, String email) {
         this.nombre = nombre;
         this.apellido = apellido;
+        this.genero = genero;
         this.email = email;
     }
     

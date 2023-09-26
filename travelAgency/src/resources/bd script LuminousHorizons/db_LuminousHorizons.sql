@@ -38,6 +38,7 @@ CREATE TABLE [dbo].[CLIENTE](
 	[email] [varchar](255) NOT NULL,
 	[usuario] [varchar](50) NOT NULL,
 	[contrasena] [varbinary](255) NOT NULL,
+	[genero] [varchar](25) NOT NULL,
 	[trabajaEmpresa] [tinyint] NOT NULL,
 PRIMARY KEY CLUSTERED 
 (
@@ -113,7 +114,7 @@ PRIMARY KEY CLUSTERED
 GO
 SET IDENTITY_INSERT [dbo].[CLIENTE] ON 
 GO
-INSERT [dbo].[CLIENTE] ([id], [nombre], [apellido], [email], [usuario], [contrasena], [trabajaEmpresa]) VALUES (1, N'Juan Bladimir', N'Romero Collazos', N'juanromerocollazos@gmail.com', N'Admin', 0x3ACA4A331944E44471E93EABED5F6933266B79F036A9FF3294AD79CC0692A807, 3)
+INSERT [dbo].[CLIENTE] ([id], [nombre], [apellido], [email], [usuario], [contrasena], [genero], [trabajaEmpresa]) VALUES (1, N'Juan Bladimir', N'Romero Collazos', N'juanromerocollazos@gmail.com', N'Admin', 0x3ACA4A331944E44471E93EABED5F6933266B79F036A9FF3294AD79CC0692A807, N'hombre',3)
 GO
 SET IDENTITY_INSERT [dbo].[CLIENTE] OFF
 GO

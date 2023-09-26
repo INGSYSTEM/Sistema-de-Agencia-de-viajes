@@ -8,9 +8,13 @@ import javax.swing.ImageIcon;
  */
 public class Panel_de_control extends javax.swing.JFrame {
 
-    public void ColocarNombre(String Mensaje)
+    public void ColocarNombre (String Mensaje)
     {
         label_nombreUsuario.setText(Mensaje);
+    }
+    
+    public void colorcarAvatar (String genero) {
+        Avartar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/user_"+ genero +".png")));
     }
     /**
      * Creates new form Panel_de_control
@@ -37,7 +41,7 @@ public class Panel_de_control extends javax.swing.JFrame {
         btnEmpleados4 = new javax.swing.JButton();
         LabelDerechosDeAutor = new javax.swing.JLabel();
         Menu = new javax.swing.JPanel();
-        avatarUser1 = new logica.util.AvatarUser();
+        Avartar = new logica.util.AvatarUser();
         label_nombreUsuario = new javax.swing.JLabel();
         btn_panel_control = new swing.ButtonGradient();
         btn_salir1 = new swing.ButtonGradient();
@@ -106,16 +110,19 @@ public class Panel_de_control extends javax.swing.JFrame {
         Menu.setBackground(new java.awt.Color(192, 130, 97));
         Menu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        avatarUser1.setBackground(new java.awt.Color(255, 255, 255));
-        avatarUser1.setBorderSize(3);
-        avatarUser1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/user_hombre.png"))); // NOI18N
-        Menu.add(avatarUser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 156, 158));
+        Avartar.setBackground(new java.awt.Color(255, 255, 255));
+        Avartar.setBorderSize(3);
+        Avartar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/user_hombre.png"))); // NOI18N
+        Menu.add(Avartar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 156, 158));
 
         label_nombreUsuario.setBackground(new java.awt.Color(0, 0, 0));
         label_nombreUsuario.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         label_nombreUsuario.setForeground(new java.awt.Color(255, 255, 255));
-        label_nombreUsuario.setText("Nombre");
-        Menu.add(label_nombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, -1, -1));
+        label_nombreUsuario.setLabelFor(Menu);
+        label_nombreUsuario.setText("Nombre_de_usuario");
+        // Centrar el texto horizontalmente
+        label_nombreUsuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Menu.add(label_nombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 250, -1));
 
         btn_panel_control.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/panel-de-control.png"))); // NOI18N
         btn_panel_control.setText("            Panel de control");
@@ -221,9 +228,9 @@ public class Panel_de_control extends javax.swing.JFrame {
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private logica.util.AvatarUser Avartar;
     private javax.swing.JLabel LabelDerechosDeAutor;
     private javax.swing.JPanel Menu;
-    private logica.util.AvatarUser avatarUser1;
     private javax.swing.JButton btnEmpleados;
     private javax.swing.JButton btnEmpleados1;
     private javax.swing.JButton btnEmpleados2;

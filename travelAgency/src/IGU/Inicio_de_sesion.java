@@ -45,7 +45,8 @@ public class Inicio_de_sesion extends javax.swing.JFrame {
         btn_inicio_de_sesion = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         LabelDerechosDeAutor = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btn_recuperarContrasena = new javax.swing.JButton();
+        btn_ingresar_como_invitado = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("INICIO DE SESIÓN | Luminous Horizons");
@@ -124,18 +125,31 @@ public class Inicio_de_sesion extends javax.swing.JFrame {
         LabelDerechosDeAutor.setText("©CopyRigth 2023 Luminous Horizons");
         jPanel1.add(LabelDerechosDeAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 660, -1, -1));
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Recuperar contraseña");
-        jButton1.setBorder(null);
-        jButton1.setContentAreaFilled(false);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btn_recuperarContrasena.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_recuperarContrasena.setForeground(new java.awt.Color(255, 255, 255));
+        btn_recuperarContrasena.setText("Recuperar contraseña");
+        btn_recuperarContrasena.setBorder(null);
+        btn_recuperarContrasena.setContentAreaFilled(false);
+        btn_recuperarContrasena.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_recuperarContrasena.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btn_recuperarContrasenaActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 550, -1, -1));
+        jPanel1.add(btn_recuperarContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 550, -1, -1));
+
+        btn_ingresar_como_invitado.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_ingresar_como_invitado.setForeground(new java.awt.Color(255, 255, 255));
+        btn_ingresar_como_invitado.setText("Ingresar como invitado");
+        btn_ingresar_como_invitado.setBorder(null);
+        btn_ingresar_como_invitado.setContentAreaFilled(false);
+        btn_ingresar_como_invitado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_ingresar_como_invitado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ingresar_como_invitadoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btn_ingresar_como_invitado, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 550, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -157,11 +171,17 @@ public class Inicio_de_sesion extends javax.swing.JFrame {
             Cliente cliente = new Cliente(inputUsuario.getText(), String.valueOf(inputPassword.getPassword()));
             String rpta = null;
             rpta = cliente.Autenticar();
-            System.out.println(rpta);
             String nombre = cliente.obtenerNombreClientePorUsuario(inputUsuario.getText());
+            String genero = cliente.obtenerGeneroClientePorUsuario(inputUsuario.getText());
             if(rpta.equals("")) {
                 Icon icono = new ImageIcon(getClass().getResource("/icon/verificacion.png"));
-                JOptionPane.showMessageDialog(null, "Se incio sesión de manera exitosa, " + nombre + " ¡Bienvenido!", "Validación de credenciales",JOptionPane.INFORMATION_MESSAGE, icono);
+                String saludo = null;
+                if (genero.equals("hombre")) {
+                    saludo = "Bienvenido";
+                }else if (genero.equals("mujer")) {
+                    saludo = "Bienvenida";
+                }
+                JOptionPane.showMessageDialog(null, "Se incio sesión de manera exitosa, " + nombre + " ¡"+ saludo +"!", "Validación de credenciales",JOptionPane.INFORMATION_MESSAGE, icono);
                 /**
                 * Este procedimiento permite mostrar la ventana siguiente
                 */
@@ -169,6 +189,7 @@ public class Inicio_de_sesion extends javax.swing.JFrame {
                 panel_de_control.setVisible(true);
                 panel_de_control.setLocationRelativeTo(null);
                 panel_de_control.ColocarNombre(nombre);
+                panel_de_control.colorcarAvatar(genero);
                 dispose();
             }else {
                 Icon icono = new ImageIcon(getClass().getResource("/icon/error.png"));
@@ -212,9 +233,16 @@ public class Inicio_de_sesion extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_inputPasswordMouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btn_recuperarContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_recuperarContrasenaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btn_recuperarContrasenaActionPerformed
+
+    private void btn_ingresar_como_invitadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ingresar_como_invitadoActionPerformed
+        Panel_de_invitado panel_de_invitado = new Panel_de_invitado();
+        panel_de_invitado.setVisible(true);
+        panel_de_invitado.setLocationRelativeTo(null);
+        dispose();
+    }//GEN-LAST:event_btn_ingresar_como_invitadoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -254,10 +282,11 @@ public class Inicio_de_sesion extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LabelDerechosDeAutor;
     private javax.swing.JLabel LuminousHorizons;
+    private javax.swing.JButton btn_ingresar_como_invitado;
     private javax.swing.JButton btn_inicio_de_sesion;
+    private javax.swing.JButton btn_recuperarContrasena;
     private javax.swing.JPasswordField inputPassword;
     private javax.swing.JTextField inputUsuario;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelPassword;

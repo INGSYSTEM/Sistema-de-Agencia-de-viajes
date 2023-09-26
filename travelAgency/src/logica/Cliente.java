@@ -11,15 +11,15 @@ public class Cliente extends Persona {
     
     // Constructor
 
-    public Cliente(String usuario, String contrasena, int trabajaEmpresa, String nombre, String apellido, String email) {
-        super(nombre, apellido, email);
+    public Cliente(String usuario, String contrasena, int trabajaEmpresa, String nombre, String apellido, String genero, String email) {
+        super(nombre, apellido, genero, email);
         this.usuario = usuario;
         this.contrasena = contrasena;
         this.trabajaEmpresa = trabajaEmpresa;
     }
 
     public Cliente(String usuario, String contrasena) {
-        super("", "", "");
+        super("", "", "", "");
         this.usuario = usuario;
         this.contrasena = contrasena;
     }
@@ -58,6 +58,25 @@ public class Cliente extends Persona {
             try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
                     return rs.getString("nombre"); // Devuelve el nombre del cliente si se encuentra
+                }
+            }
+        } catch (SQLException e) {
+            System.err.println("Error: " + e);
+            throw e;
+        } finally {
+            conexion.connection.close();
+        }
+        return null; // Si no se encuentra el usuario, devuelve null
+    }
+    
+    public String obtenerGeneroClientePorUsuario(String usuario) throws SQLException, ClassNotFoundException {
+        ConexionDB conexion = new ConexionDB();
+        String consultaSql = "SELECT genero FROM CLIENTE WHERE usuario = ?";
+        try (PreparedStatement ps = conexion.connection.prepareStatement(consultaSql)) {
+            ps.setString(1, usuario); // Asigna el valor del usuario
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getString("genero"); // Devuelve el nombre del cliente si se encuentra
                 }
             }
         } catch (SQLException e) {

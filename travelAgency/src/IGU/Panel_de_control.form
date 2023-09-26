@@ -270,7 +270,7 @@
             <Property name="useNullLayout" type="boolean" value="false"/>
           </Layout>
           <SubComponents>
-            <Container class="logica.util.AvatarUser" name="avatarUser1">
+            <Container class="logica.util.AvatarUser" name="Avartar">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -301,11 +301,17 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Nombre"/>
+                <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                  <ComponentRef name="Menu"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Nombre_de_usuario"/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="// Centrar el texto horizontalmente&#xa;label_nombreUsuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);"/>
+              </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="110" y="220" width="-1" height="-1"/>
+                  <AbsoluteConstraints x="20" y="230" width="250" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>

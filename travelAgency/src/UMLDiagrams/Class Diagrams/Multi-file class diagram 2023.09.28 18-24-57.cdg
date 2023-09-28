@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="Asiento" package="logica" visibility="public" xPosition="125.0" yPosition="838.0">
+      <Fields>
+        <Field name="vuelo" type="Vuelo" visibility="private"/>
+        <Field name="numeroAsiento" type="int" visibility="private"/>
+        <Field name="clase" type="String" visibility="private"/>
+        <Field name="ocupado" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Vuelo" name="vuelo"/>
+          <Argument type="int" name="numeroAsiento"/>
+          <Argument type="String" name="clase"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Cliente" package="logica" visibility="public" xPosition="827.0" yPosition="752.0">
+      <Fields>
+        <Field name="usuario" type="String" visibility="private"/>
+        <Field name="contrasena" type="String" visibility="private"/>
+        <Field name="trabajaEmpresa" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="usuario"/>
+          <Argument type="String" name="contrasena"/>
+          <Argument type="int" name="trabajaEmpresa"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="String" name="genero"/>
+          <Argument type="String" name="email"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="usuario"/>
+          <Argument type="String" name="contrasena"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="Autenticar" returnType="String" visibility="public"/>
+        <Method name="obtenerNombreClientePorUsuario" returnType="String" visibility="public">
+          <Argument type="String" name="usuario"/>
+        </Method>
+        <Method name="obtenerGeneroClientePorUsuario" returnType="String" visibility="public">
+          <Argument type="String" name="usuario"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ConexionDB" package="logica" visibility="public" xPosition="113.0" yPosition="295.0">
+      <Fields>
+        <Field name="connection" type="Connection" visibility="package" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Configuraciones" package="logica" visibility="public" xPosition="113.0" yPosition="58.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="llenarComboBoxDestino" returnType="void" visibility="public">
+          <Argument type="JComboBox&lt;String&gt;" name="comboBox"/>
+        </Method>
+        <Method name="llenarComboBoxOrigen" returnType="void" visibility="public">
+          <Argument type="JComboBox&lt;String&gt;" name="comboBox"/>
+        </Method>
+        <Method name="registrarCliente" returnType="void" visibility="public">
+          <Argument type="String" name="nombres"/>
+          <Argument type="String" name="apellidos"/>
+          <Argument type="String" name="email"/>
+          <Argument type="String" name="usuario"/>
+          <Argument type="String" name="contrasena"/>
+          <Argument type="String" name="genero"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Destino" package="logica" visibility="public" xPosition="465.0" yPosition="1122.0">
+      <Fields>
+        <Field name="nombreDestino" type="String" visibility="private"/>
+        <Field name="precio" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombreDestino"/>
+          <Argument type="double" name="precio"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Persona" package="logica" visibility="public" xPosition="1565.0" yPosition="393.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="apellido" type="String" visibility="private"/>
+        <Field name="genero" type="String" visibility="private"/>
+        <Field name="email" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="String" name="genero"/>
+          <Argument type="String" name="email"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Reserva" package="logica" visibility="public" xPosition="1042.0" yPosition="295.0">
+      <Fields>
+        <Field name="cliente" type="Cliente" visibility="private"/>
+        <Field name="vuelo" type="Vuelo" visibility="private"/>
+        <Field name="fechaReserva" type="Date" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Cliente" name="cliente"/>
+          <Argument type="Vuelo" name="vuelo"/>
+          <Argument type="Date" name="fechaReserva"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="ReservaDestino" package="logica" visibility="public" xPosition="967.0" yPosition="1113.0">
+      <Fields>
+        <Field name="cliente" type="Cliente" visibility="private"/>
+        <Field name="destino" type="Destino" visibility="private"/>
+        <Field name="fechaReserva" type="Date" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Cliente" name="cliente"/>
+          <Argument type="Destino" name="destino"/>
+          <Argument type="Date" name="fechaReserva"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Vuelo" package="logica" visibility="public" xPosition="113.0" yPosition="508.0">
+      <Fields>
+        <Field name="origen" type="String" visibility="private"/>
+        <Field name="destino" type="Destino" visibility="private"/>
+        <Field name="fecha" type="Date" visibility="private"/>
+        <Field name="hora" type="String" visibility="private"/>
+        <Field name="capacidad" type="int" visibility="private"/>
+        <Field name="precio" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="origen"/>
+          <Argument type="Destino" name="destino"/>
+          <Argument type="Date" name="fecha"/>
+          <Argument type="String" name="hora"/>
+          <Argument type="int" name="capacidad"/>
+          <Argument type="double" name="precio"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="vuelo" source="logica.Reserva" target="logica.Vuelo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="cliente" source="logica.Reserva" target="logica.Cliente" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="cliente" source="logica.ReservaDestino" target="logica.Cliente" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="destino" source="logica.Vuelo" target="logica.Destino" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="destino" source="logica.ReservaDestino" target="logica.Destino" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="vuelo" source="logica.Asiento" target="logica.Vuelo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="logica.Cliente" target="logica.Persona"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

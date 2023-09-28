@@ -12,7 +12,7 @@ import javax.swing.JComboBox;
  */
 public class Configuraciones {
     // Método para poder llenar el combobox de países
-    public void llenarComboBox(JComboBox<String> comboBox) throws SQLException, ClassNotFoundException {
+    public void llenarComboBoxDestino(JComboBox<String> comboBox) throws SQLException, ClassNotFoundException {
         ConexionDB conexion = new ConexionDB();
         String consultaSql = "SELECT nombre_destino FROM DESTINO ORDER BY nombre_destino";
         DefaultComboBoxModel<String> modelo = new DefaultComboBoxModel<>();
@@ -20,6 +20,26 @@ public class Configuraciones {
             try (ResultSet rs = ps.executeQuery()) {
                 while (rs.next()) {
                     String nombreDestino = rs.getString("nombre_destino");
+                    modelo.addElement(nombreDestino);
+                }
+            }
+        } catch (SQLException e) {
+            System.err.println("Error: " + e);
+            throw e;
+        } finally {
+            conexion.connection.close();
+        }
+        comboBox.setModel(modelo);
+    }
+    
+    public void llenarComboBoxOrigen(JComboBox<String> comboBox) throws SQLException, ClassNotFoundException {
+        ConexionDB conexion = new ConexionDB();
+        String consultaSql = "SELECT origen FROM VUELO GROUP BY origen ORDER BY origen";
+        DefaultComboBoxModel<String> modelo = new DefaultComboBoxModel<>();
+        try (PreparedStatement ps = conexion.connection.prepareStatement(consultaSql)) {
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    String nombreDestino = rs.getString("origen");
                     modelo.addElement(nombreDestino);
                 }
             }

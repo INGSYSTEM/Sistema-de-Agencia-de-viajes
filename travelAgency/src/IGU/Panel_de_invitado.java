@@ -25,8 +25,8 @@ public class Panel_de_invitado extends javax.swing.JFrame {
         initComponents();
         setIconImage(new ImageIcon(getClass().getResource("/favicon/Nuevo_logo_de_Luminous_Horizons.png")).getImage());
         configuraciones = new Configuraciones();
-        configuraciones.llenarComboBox(cb_origen);
-        configuraciones.llenarComboBox(cb_destino);
+        configuraciones.llenarComboBoxOrigen(cb_origen);
+        configuraciones.llenarComboBoxDestino(cb_destino);
         this.setResizable(false);
     }
     
@@ -217,6 +217,11 @@ public class Panel_de_invitado extends javax.swing.JFrame {
         label_destino.setText("Ingresa el destino");
         panel_de_busqueda.add(label_destino, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 60, -1, 30));
 
+        cb_destino.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cb_destinoActionPerformed(evt);
+            }
+        });
         panel_de_busqueda.add(cb_destino, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 60, 150, 30));
 
         label_decha_de_regreso.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -224,7 +229,7 @@ public class Panel_de_invitado extends javax.swing.JFrame {
         panel_de_busqueda.add(label_decha_de_regreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 100, -1, -1));
 
         calendario_regreso.setDecorationBackgroundColor(new java.awt.Color(108, 74, 148));
-        calendario_regreso.setDecorationBordersVisible(true);
+        calendario_regreso.setDoubleBuffered(false);
         calendario_regreso.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         calendario_regreso.setMinimumSize(new java.awt.Dimension(251, 180));
         calendario_regreso.setPreferredSize(new java.awt.Dimension(251, 180));
@@ -858,6 +863,10 @@ public class Panel_de_invitado extends javax.swing.JFrame {
     private void cb_origenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_origenActionPerformed
 
     }//GEN-LAST:event_cb_origenActionPerformed
+
+    private void cb_destinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_destinoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cb_destinoActionPerformed
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -100,6 +100,8 @@ public class Registro_de_usuarios extends javax.swing.JFrame {
         logo = new javax.swing.JLabel();
         checkB_tratamiento = new javax.swing.JCheckBox();
         checkB_terminos = new javax.swing.JCheckBox();
+        jLabel1 = new javax.swing.JLabel();
+        popup_terminos = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("REGISTRO | Luminous Horizons");
@@ -226,7 +228,28 @@ public class Registro_de_usuarios extends javax.swing.JFrame {
         checkB_terminos.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         checkB_terminos.setForeground(new java.awt.Color(255, 255, 255));
         checkB_terminos.setText("Acepto los terminos y condiciones del programa de Luminous Horizons");
+        checkB_terminos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkB_terminosActionPerformed(evt);
+            }
+        });
         jPanel1.add(checkB_terminos, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 470, -1, -1));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(226, 203, 253));
+        jLabel1.setText("  *");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 500, 30, -1));
+
+        popup_terminos.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        popup_terminos.setForeground(new java.awt.Color(226, 203, 253));
+        popup_terminos.setText(" *");
+        popup_terminos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        popup_terminos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                popup_terminosMouseClicked(evt);
+            }
+        });
+        jPanel1.add(popup_terminos, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 460, 20, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -306,6 +329,16 @@ public class Registro_de_usuarios extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btn_registrarActionPerformed
 
+    private void checkB_terminosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkB_terminosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_checkB_terminosActionPerformed
+
+    private void popup_terminosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_popup_terminosMouseClicked
+        Terminos_y_condiciones terminos_y_condiciones = new Terminos_y_condiciones();
+        terminos_y_condiciones.setVisible(true);
+        terminos_y_condiciones.setLocationRelativeTo(null);
+    }//GEN-LAST:event_popup_terminosMouseClicked
+
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private IGU.util.ButtonGradient btn_limpiar;
@@ -319,6 +352,7 @@ public class Registro_de_usuarios extends javax.swing.JFrame {
     private javax.swing.JTextField input_nombre_usuario;
     private javax.swing.JTextField input_nombres;
     private javax.swing.JPasswordField input_repetir_contrasena;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel label_apellidos;
     private javax.swing.JLabel label_contrasena;
@@ -329,5 +363,6 @@ public class Registro_de_usuarios extends javax.swing.JFrame {
     private javax.swing.JLabel label_repetir_contrasena;
     private javax.swing.JLabel label_titulo;
     private javax.swing.JLabel logo;
+    private javax.swing.JLabel popup_terminos;
     // End of variables declaration//GEN-END:variables
 }

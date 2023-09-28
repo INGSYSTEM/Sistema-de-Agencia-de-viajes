@@ -827,7 +827,7 @@ public class Panel_de_invitado extends javax.swing.JFrame {
 
         panel_scroll.setViewportView(Contenido);
 
-        panel_Principal.add(panel_scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1040, 830));
+        panel_Principal.add(panel_scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1040, 470));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

@@ -4,22 +4,30 @@
  */
 package IGU;
 
-import java.awt.Dimension;
-import javax.swing.JScrollPane;
+import java.awt.Color;
 import javax.swing.SpinnerNumberModel;
+import logica.Configuraciones;
+import java.sql.SQLException;
+import javax.swing.ImageIcon;
 
 /**
  *
  * @author Juan Romero
  */
 public class Panel_de_invitado extends javax.swing.JFrame {
-
+         
     /**
      * Creates new form Panel_de_invitado
      */
+    Configuraciones configuraciones;
     
-    public Panel_de_invitado() {
+    public Panel_de_invitado() throws SQLException, ClassNotFoundException {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/favicon/Nuevo_logo_de_Luminous_Horizons.png")).getImage());
+        configuraciones = new Configuraciones();
+        configuraciones.llenarComboBox(cb_origen);
+        configuraciones.llenarComboBox(cb_destino);
+        this.setResizable(false);
     }
     
     /**
@@ -33,164 +41,925 @@ public class Panel_de_invitado extends javax.swing.JFrame {
 
         panel_Principal = new javax.swing.JPanel();
         Barra_de_menu = new javax.swing.JPanel();
-        btn_inicar_sesion = new swing.ButtonGradient();
         jLabel1 = new javax.swing.JLabel();
-        btn_registrarse = new swing.ButtonGradient();
-        jLabel2 = new javax.swing.JLabel();
-        panel_de_busqueda = new test.PanelRound();
+        btn_iniciar_sesion = new IGU.util.ButtonGradient();
+        btn_registrarse = new IGU.util.ButtonGradient();
+        panel_scroll = new javax.swing.JScrollPane();
+        Contenido = new javax.swing.JPanel();
+        panel_de_busqueda = new IGU.util.PanelRound();
+        cb_forma_de_viaje = new javax.swing.JComboBox<>();
+        cb_tipo_de_viaje = new javax.swing.JComboBox<>();
+        label_cantidad_de_pasajeros = new javax.swing.JLabel();
+        Spinner_cantidad_pasajeros = new javax.swing.JSpinner(new SpinnerNumberModel(1, 1, 8, 1));
+        label_origen = new javax.swing.JLabel();
+        cb_origen = new javax.swing.JComboBox<>();
+        label_destino = new javax.swing.JLabel();
+        cb_destino = new javax.swing.JComboBox<>();
+        label_decha_de_regreso = new javax.swing.JLabel();
         calendario_regreso = new com.toedter.calendar.JCalendar();
         calendario_ida = new com.toedter.calendar.JCalendar();
         label_decha_de_ida = new javax.swing.JLabel();
-        label_decha_de_regreso = new javax.swing.JLabel();
-        btn_registrarse1 = new swing.ButtonGradient();
-        label_destino = new javax.swing.JLabel();
-        cb_destino = new javax.swing.JComboBox<>();
-        cb_origen = new javax.swing.JComboBox<>();
-        label_origen = new javax.swing.JLabel();
-        Spinner_cantidad_pasajeros = new javax.swing.JSpinner(new SpinnerNumberModel(1, 1, 8, 1));
-        label_cantidad_de_pasajeros = new javax.swing.JLabel();
-        cb_tipo_de_viaje = new javax.swing.JComboBox<>();
-        cb_forma_de_viaje = new javax.swing.JComboBox<>();
+        btn_buscar = new IGU.util.ButtonGradient();
+        jLabel2 = new javax.swing.JLabel();
+        panel_card_01 = new IGU.util.PanelRound();
+        contenedor_flag_descripcion = new IGU.util.PanelRound();
+        descripcion01 = new IGU.util.PanelRound();
+        btn_ir_pago_01 = new IGU.util.ButtonGradient();
+        precio01 = new javax.swing.JLabel();
+        especificacion_ida_o_vuelta01 = new javax.swing.JLabel();
+        contendor_modalidad_viaje01 = new IGU.util.PanelRound();
+        tag_modalidad01 = new javax.swing.JLabel();
+        lugar01 = new javax.swing.JLabel();
+        flag_descuento01 = new IGU.util.PanelRound();
+        descuento_01 = new javax.swing.JLabel();
+        label_fecha_ida_vuelta01 = new javax.swing.JLabel();
+        imagen_panel_card_01 = new javax.swing.JLabel();
+        panel_card_02 = new IGU.util.PanelRound();
+        contenedor_flag_descripcion1 = new IGU.util.PanelRound();
+        descripcion02 = new IGU.util.PanelRound();
+        btn_ir_pago_02 = new IGU.util.ButtonGradient();
+        precio02 = new javax.swing.JLabel();
+        especificacion_ida_o_vuelta02 = new javax.swing.JLabel();
+        contendor_modalidad_viaje02 = new IGU.util.PanelRound();
+        tag_modalidad02 = new javax.swing.JLabel();
+        lugar02 = new javax.swing.JLabel();
+        flag_descuento02 = new IGU.util.PanelRound();
+        descuento_02 = new javax.swing.JLabel();
+        label_fecha_ida_vuelta02 = new javax.swing.JLabel();
+        imagen_panel_card_02 = new javax.swing.JLabel();
+        panel_card_03 = new IGU.util.PanelRound();
+        contenedor_flag_descripcion03 = new IGU.util.PanelRound();
+        descripcion2 = new IGU.util.PanelRound();
+        btn_ir_pago_03 = new IGU.util.ButtonGradient();
+        precio03 = new javax.swing.JLabel();
+        especificacion_ida_o_vuelta03 = new javax.swing.JLabel();
+        contendor_modalidad_viaje03 = new IGU.util.PanelRound();
+        tag_modalidad03 = new javax.swing.JLabel();
+        lugar03 = new javax.swing.JLabel();
+        flag_descuento03 = new IGU.util.PanelRound();
+        descuento_03 = new javax.swing.JLabel();
+        label_fecha_ida_vuelta03 = new javax.swing.JLabel();
+        imagen_panel_card_03 = new javax.swing.JLabel();
+        panel_card_04 = new IGU.util.PanelRound();
+        contenedor_flag_descripcion04 = new IGU.util.PanelRound();
+        descripcion04 = new IGU.util.PanelRound();
+        btn_ir_pago_04 = new IGU.util.ButtonGradient();
+        precio04 = new javax.swing.JLabel();
+        especificacion_ida_o_vuelta04 = new javax.swing.JLabel();
+        contendor_modalidad_viaje04 = new IGU.util.PanelRound();
+        tag_modalidad04 = new javax.swing.JLabel();
+        lugar04 = new javax.swing.JLabel();
+        flag_descuento04 = new IGU.util.PanelRound();
+        descuento_04 = new javax.swing.JLabel();
+        label_fecha_ida_vuelta04 = new javax.swing.JLabel();
+        imagen_panel_card_04 = new javax.swing.JLabel();
+        panel_card_05 = new IGU.util.PanelRound();
+        contenedor_flag_descripcion05 = new IGU.util.PanelRound();
+        descripcion05 = new IGU.util.PanelRound();
+        btn_ir_pago_05 = new IGU.util.ButtonGradient();
+        precio05 = new javax.swing.JLabel();
+        especificacion_ida_o_vuelta05 = new javax.swing.JLabel();
+        contendor_modalidad_viaje05 = new IGU.util.PanelRound();
+        tag_modalidad05 = new javax.swing.JLabel();
+        lugar05 = new javax.swing.JLabel();
+        flag_descuento05 = new IGU.util.PanelRound();
+        descuento_05 = new javax.swing.JLabel();
+        label_fecha_ida_vuelta05 = new javax.swing.JLabel();
+        imagen_panel_card_05 = new javax.swing.JLabel();
+        panel_card_06 = new IGU.util.PanelRound();
+        contenedor_flag_descripcion5 = new IGU.util.PanelRound();
+        descripcion06 = new IGU.util.PanelRound();
+        btn_ir_pago_06 = new IGU.util.ButtonGradient();
+        precio06 = new javax.swing.JLabel();
+        especificacion_ida_o_vuelta06 = new javax.swing.JLabel();
+        contendor_modalidad_viaje06 = new IGU.util.PanelRound();
+        tag_modalidad06 = new javax.swing.JLabel();
+        lugar06 = new javax.swing.JLabel();
+        flag_descuento06 = new IGU.util.PanelRound();
+        descuento_06 = new javax.swing.JLabel();
+        label_fecha_ida_vuelta06 = new javax.swing.JLabel();
+        imagen_panel_card_06 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Panel de invitado | Luminous Horizons");
+        setTitle("PANEL DE INVITADO | Luminous Horizons");
 
-        panel_Principal.setBackground(new java.awt.Color(51, 51, 51));
+        panel_Principal.setBackground(new java.awt.Color(24, 7, 43));
         panel_Principal.setFocusTraversalPolicyProvider(true);
         panel_Principal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Barra_de_menu.setBackground(new java.awt.Color(154, 59, 59));
+        Barra_de_menu.setBackground(new java.awt.Color(108, 74, 148));
         Barra_de_menu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btn_inicar_sesion.setText("Inciar sesión");
-        btn_inicar_sesion.setColor1(new java.awt.Color(154, 59, 59));
-        btn_inicar_sesion.setColor2(new java.awt.Color(51, 51, 51));
-        btn_inicar_sesion.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btn_inicar_sesion.addActionListener(new java.awt.event.ActionListener() {
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/Nuevo logo de Luminous Horizons small.png"))); // NOI18N
+        Barra_de_menu.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, -1, -1));
+
+        btn_iniciar_sesion.setText("Iniciar sesión");
+        btn_iniciar_sesion.setColor1(new java.awt.Color(108, 74, 148));
+        btn_iniciar_sesion.setColor2(new java.awt.Color(0, 0, 0));
+        btn_iniciar_sesion.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_iniciar_sesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_inicar_sesionActionPerformed(evt);
+                btn_iniciar_sesionActionPerformed(evt);
             }
         });
-        Barra_de_menu.add(btn_inicar_sesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 10, -1, -1));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/Luminous Horizons small.png"))); // NOI18N
-        Barra_de_menu.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
+        Barra_de_menu.add(btn_iniciar_sesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 20, -1, -1));
 
         btn_registrarse.setText("Registrarse");
-        btn_registrarse.setColor1(new java.awt.Color(154, 59, 59));
-        btn_registrarse.setColor2(new java.awt.Color(51, 51, 51));
+        btn_registrarse.setColor1(new java.awt.Color(108, 74, 148));
+        btn_registrarse.setColor2(new java.awt.Color(0, 0, 0));
         btn_registrarse.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        Barra_de_menu.add(btn_registrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, -1, -1));
+        btn_registrarse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_registrarseActionPerformed(evt);
+            }
+        });
+        Barra_de_menu.add(btn_registrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 20, -1, -1));
 
-        panel_Principal.add(Barra_de_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1043, 53));
+        panel_Principal.add(Barra_de_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1043, 70));
 
-        jLabel2.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Descubre tu próximo viaje");
-        panel_Principal.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 550, 280, -1));
+        panel_scroll.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        panel_scroll.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
-        panel_de_busqueda.setBackground(new java.awt.Color(255, 255, 255));
+        Contenido.setBackground(new java.awt.Color(24, 7, 43));
+        Contenido.setForeground(new java.awt.Color(255, 255, 255));
+        Contenido.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         panel_de_busqueda.setRoundBottomLeft(50);
         panel_de_busqueda.setRoundBottomRight(50);
         panel_de_busqueda.setRoundTopLeft(50);
         panel_de_busqueda.setRoundTopRight(50);
         panel_de_busqueda.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        calendario_regreso.setDecorationBackgroundColor(new java.awt.Color(241, 222, 201));
+        cb_forma_de_viaje.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Solo ida", "Ida y Vuelta" }));
+        cb_forma_de_viaje.setSelectedIndex(1);
+        panel_de_busqueda.add(cb_forma_de_viaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 201, -1));
+
+        cb_tipo_de_viaje.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Económico", "Premium económico", "Premium empresarial" }));
+        panel_de_busqueda.add(cb_tipo_de_viaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 201, -1));
+
+        label_cantidad_de_pasajeros.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        label_cantidad_de_pasajeros.setText("Cantidad de pasajeros");
+        panel_de_busqueda.add(label_cantidad_de_pasajeros, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, -1, 30));
+        panel_de_busqueda.add(Spinner_cantidad_pasajeros, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 20, -1, -1));
+
+        label_origen.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        label_origen.setText("Ingresa el origen");
+        panel_de_busqueda.add(label_origen, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 20, -1, 30));
+
+        cb_origen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cb_origenActionPerformed(evt);
+            }
+        });
+        panel_de_busqueda.add(cb_origen, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 20, 150, 30));
+
+        label_destino.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        label_destino.setText("Ingresa el destino");
+        panel_de_busqueda.add(label_destino, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 60, -1, 30));
+
+        panel_de_busqueda.add(cb_destino, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 60, 150, 30));
+
+        label_decha_de_regreso.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        label_decha_de_regreso.setText("Fecha de regreso");
+        panel_de_busqueda.add(label_decha_de_regreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 100, -1, -1));
+
+        calendario_regreso.setDecorationBackgroundColor(new java.awt.Color(108, 74, 148));
         calendario_regreso.setDecorationBordersVisible(true);
         calendario_regreso.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         calendario_regreso.setMinimumSize(new java.awt.Dimension(251, 180));
         calendario_regreso.setPreferredSize(new java.awt.Dimension(251, 180));
-        panel_de_busqueda.add(calendario_regreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 150, 440, 230));
+        calendario_regreso.setSundayForeground(new java.awt.Color(255, 255, 255));
+        calendario_regreso.setWeekdayForeground(new java.awt.Color(226, 203, 253));
+        panel_de_busqueda.add(calendario_regreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 140, 440, 230));
 
-        calendario_ida.setDecorationBackgroundColor(new java.awt.Color(241, 222, 201));
+        calendario_ida.setDecorationBackgroundColor(new java.awt.Color(108, 74, 148));
         calendario_ida.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         calendario_ida.setMinimumSize(new java.awt.Dimension(251, 180));
         calendario_ida.setPreferredSize(new java.awt.Dimension(251, 180));
-        panel_de_busqueda.add(calendario_ida, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 440, 230));
+        calendario_ida.setSundayForeground(new java.awt.Color(255, 255, 255));
+        calendario_ida.setWeekdayForeground(new java.awt.Color(226, 203, 253));
+        panel_de_busqueda.add(calendario_ida, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 440, 230));
 
         label_decha_de_ida.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         label_decha_de_ida.setText("Fecha de ida");
-        panel_de_busqueda.add(label_decha_de_ida, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
+        panel_de_busqueda.add(label_decha_de_ida, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
 
-        label_decha_de_regreso.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        label_decha_de_regreso.setText("Fecha de regreso");
-        panel_de_busqueda.add(label_decha_de_regreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 110, -1, -1));
+        btn_buscar.setText("Buscar");
+        btn_buscar.setColor1(new java.awt.Color(108, 74, 148));
+        btn_buscar.setColor2(new java.awt.Color(0, 0, 0));
+        btn_buscar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_buscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_buscarActionPerformed(evt);
+            }
+        });
+        panel_de_busqueda.add(btn_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 370, -1, -1));
 
-        btn_registrarse1.setText("Buscar vuelos");
-        btn_registrarse1.setColor1(new java.awt.Color(154, 59, 59));
-        btn_registrarse1.setColor2(new java.awt.Color(51, 51, 51));
-        btn_registrarse1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        panel_de_busqueda.add(btn_registrarse1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 400, -1, -1));
+        Contenido.add(panel_de_busqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 960, 420));
 
-        label_destino.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        label_destino.setText("Ingresa el destino");
-        panel_de_busqueda.add(label_destino, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 60, -1, 30));
+        jLabel2.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Descubre tu próximo viaje");
+        Contenido.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 470, 280, -1));
 
-        panel_de_busqueda.add(cb_destino, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 60, 150, 30));
+        panel_card_01.setBackground(new java.awt.Color(108, 74, 148));
+        panel_card_01.setRoundBottomLeft(50);
+        panel_card_01.setRoundBottomRight(50);
+        panel_card_01.setRoundTopLeft(50);
+        panel_card_01.setRoundTopRight(50);
+        panel_card_01.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panel_de_busqueda.add(cb_origen, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 20, 150, 30));
+        contenedor_flag_descripcion.setBackground(new java.awt.Color(204, 204, 204));
+        contenedor_flag_descripcion.setRoundBottomLeft(50);
+        contenedor_flag_descripcion.setRoundBottomRight(50);
+        contenedor_flag_descripcion.setRoundTopLeft(50);
+        contenedor_flag_descripcion.setRoundTopRight(50);
+        contenedor_flag_descripcion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        label_origen.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        label_origen.setText("Ingresa el origen");
-        panel_de_busqueda.add(label_origen, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 20, -1, 30));
-        panel_de_busqueda.add(Spinner_cantidad_pasajeros, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 20, -1, -1));
+        descripcion01.setBackground(new java.awt.Color(255, 255, 255));
+        descripcion01.setRoundBottomLeft(50);
+        descripcion01.setRoundBottomRight(50);
+        descripcion01.setRoundTopLeft(50);
+        descripcion01.setRoundTopRight(50);
+        descripcion01.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        label_cantidad_de_pasajeros.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        label_cantidad_de_pasajeros.setText("Cantidad de pasajeros");
-        panel_de_busqueda.add(label_cantidad_de_pasajeros, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 16, -1, 30));
+        btn_ir_pago_01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/flecha.png"))); // NOI18N
+        btn_ir_pago_01.setColor1(new java.awt.Color(0, 0, 0));
+        btn_ir_pago_01.setColor2(new java.awt.Color(102, 0, 204));
+        descripcion01.add(btn_ir_pago_01, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, 42, -1));
 
-        cb_tipo_de_viaje.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Económico", "Premium económico", "Premium empresarial" }));
-        panel_de_busqueda.add(cb_tipo_de_viaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, 201, -1));
+        precio01.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        precio01.setText("S/. 13200");
+        descripcion01.add(precio01, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
 
-        cb_forma_de_viaje.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Solo ida", "Ida y Vuelta" }));
-        cb_forma_de_viaje.setSelectedIndex(1);
-        panel_de_busqueda.add(cb_forma_de_viaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 201, -1));
+        especificacion_ida_o_vuelta01.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        especificacion_ida_o_vuelta01.setForeground(new java.awt.Color(153, 0, 204));
+        especificacion_ida_o_vuelta01.setText("Ida y vuelta");
+        descripcion01.add(especificacion_ida_o_vuelta01, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
 
-        panel_Principal.add(panel_de_busqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 980, 450));
+        contendor_modalidad_viaje01.setBackground(new java.awt.Color(226, 203, 253));
+        contendor_modalidad_viaje01.setRoundBottomLeft(10);
+        contendor_modalidad_viaje01.setRoundBottomRight(10);
+        contendor_modalidad_viaje01.setRoundTopLeft(10);
+        contendor_modalidad_viaje01.setRoundTopRight(10);
+
+        tag_modalidad01.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        tag_modalidad01.setText("Económico");
+        tag_modalidad01.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout contendor_modalidad_viaje01Layout = new javax.swing.GroupLayout(contendor_modalidad_viaje01);
+        contendor_modalidad_viaje01.setLayout(contendor_modalidad_viaje01Layout);
+        contendor_modalidad_viaje01Layout.setHorizontalGroup(
+            contendor_modalidad_viaje01Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(contendor_modalidad_viaje01Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(tag_modalidad01, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        contendor_modalidad_viaje01Layout.setVerticalGroup(
+            contendor_modalidad_viaje01Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(contendor_modalidad_viaje01Layout.createSequentialGroup()
+                .addComponent(tag_modalidad01)
+                .addGap(0, 4, Short.MAX_VALUE))
+        );
+
+        descripcion01.add(contendor_modalidad_viaje01, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 80, 20));
+
+        lugar01.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        lugar01.setText("Nueva York");
+        descripcion01.add(lugar01, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+
+        contenedor_flag_descripcion.add(descripcion01, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 25, 290, 110));
+
+        flag_descuento01.setBackground(new java.awt.Color(153, 0, 204));
+        flag_descuento01.setRoundBottomLeft(50);
+        flag_descuento01.setRoundTopLeft(50);
+        flag_descuento01.setRoundTopRight(50);
+        flag_descuento01.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        descuento_01.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        descuento_01.setForeground(new java.awt.Color(255, 255, 255));
+        descuento_01.setText("12% dcto.");
+        flag_descuento01.add(descuento_01, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -4, 60, 30));
+
+        contenedor_flag_descripcion.add(flag_descuento01, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 80, 50));
+
+        label_fecha_ida_vuelta01.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        label_fecha_ida_vuelta01.setText("Ida 14/08/2023 . vuelta 24/08/2023");
+        contenedor_flag_descripcion.add(label_fecha_ida_vuelta01, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 200, 20));
+
+        panel_card_01.add(contenedor_flag_descripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 292, 130));
+
+        imagen_panel_card_01.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/minuaturas_de_vuelos/new_york.jpg"))); // NOI18N
+        panel_card_01.add(imagen_panel_card_01, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        Contenido.add(panel_card_01, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 520, -1, 290));
+
+        panel_card_02.setBackground(new java.awt.Color(108, 74, 148));
+        panel_card_02.setRoundBottomLeft(50);
+        panel_card_02.setRoundBottomRight(50);
+        panel_card_02.setRoundTopLeft(50);
+        panel_card_02.setRoundTopRight(50);
+        panel_card_02.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        contenedor_flag_descripcion1.setBackground(new java.awt.Color(204, 204, 204));
+        contenedor_flag_descripcion1.setRoundBottomLeft(50);
+        contenedor_flag_descripcion1.setRoundBottomRight(50);
+        contenedor_flag_descripcion1.setRoundTopLeft(50);
+        contenedor_flag_descripcion1.setRoundTopRight(50);
+        contenedor_flag_descripcion1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        descripcion02.setBackground(new java.awt.Color(255, 255, 255));
+        descripcion02.setRoundBottomLeft(50);
+        descripcion02.setRoundBottomRight(50);
+        descripcion02.setRoundTopLeft(50);
+        descripcion02.setRoundTopRight(50);
+        descripcion02.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btn_ir_pago_02.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/flecha.png"))); // NOI18N
+        btn_ir_pago_02.setColor1(new java.awt.Color(0, 0, 0));
+        btn_ir_pago_02.setColor2(new java.awt.Color(102, 0, 204));
+        descripcion02.add(btn_ir_pago_02, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, 42, -1));
+
+        precio02.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        precio02.setText("S/. 14200");
+        descripcion02.add(precio02, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
+
+        especificacion_ida_o_vuelta02.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        especificacion_ida_o_vuelta02.setForeground(new java.awt.Color(153, 0, 204));
+        especificacion_ida_o_vuelta02.setText("Ida y vuelta");
+        descripcion02.add(especificacion_ida_o_vuelta02, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
+
+        contendor_modalidad_viaje02.setBackground(new java.awt.Color(226, 203, 253));
+        contendor_modalidad_viaje02.setRoundBottomLeft(10);
+        contendor_modalidad_viaje02.setRoundBottomRight(10);
+        contendor_modalidad_viaje02.setRoundTopLeft(10);
+        contendor_modalidad_viaje02.setRoundTopRight(10);
+
+        tag_modalidad02.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        tag_modalidad02.setText("Económico");
+        tag_modalidad01.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout contendor_modalidad_viaje02Layout = new javax.swing.GroupLayout(contendor_modalidad_viaje02);
+        contendor_modalidad_viaje02.setLayout(contendor_modalidad_viaje02Layout);
+        contendor_modalidad_viaje02Layout.setHorizontalGroup(
+            contendor_modalidad_viaje02Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(contendor_modalidad_viaje02Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(tag_modalidad02, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        contendor_modalidad_viaje02Layout.setVerticalGroup(
+            contendor_modalidad_viaje02Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(contendor_modalidad_viaje02Layout.createSequentialGroup()
+                .addComponent(tag_modalidad02)
+                .addGap(0, 4, Short.MAX_VALUE))
+        );
+
+        descripcion02.add(contendor_modalidad_viaje02, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 80, 20));
+
+        lugar02.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        lugar02.setText("Río de Janeiro");
+        descripcion02.add(lugar02, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+
+        contenedor_flag_descripcion1.add(descripcion02, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 25, 290, 110));
+
+        flag_descuento02.setBackground(new java.awt.Color(153, 0, 204));
+        flag_descuento02.setRoundBottomLeft(50);
+        flag_descuento02.setRoundTopLeft(50);
+        flag_descuento02.setRoundTopRight(50);
+        flag_descuento02.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        descuento_02.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        descuento_02.setForeground(new java.awt.Color(255, 255, 255));
+        descuento_02.setText("22% dcto.");
+        flag_descuento02.add(descuento_02, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -4, 60, 30));
+
+        contenedor_flag_descripcion1.add(flag_descuento02, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 80, 50));
+
+        label_fecha_ida_vuelta02.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        label_fecha_ida_vuelta02.setText("Ida 15/08/2023 . vuelta 20/08/2023");
+        contenedor_flag_descripcion1.add(label_fecha_ida_vuelta02, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 200, 20));
+
+        panel_card_02.add(contenedor_flag_descripcion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 292, 130));
+
+        imagen_panel_card_02.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/minuaturas_de_vuelos/rio_de_janeiro.jpg"))); // NOI18N
+        panel_card_02.add(imagen_panel_card_02, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        Contenido.add(panel_card_02, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 520, -1, 290));
+
+        panel_card_03.setBackground(new java.awt.Color(108, 74, 148));
+        panel_card_03.setRoundBottomLeft(50);
+        panel_card_03.setRoundBottomRight(50);
+        panel_card_03.setRoundTopLeft(50);
+        panel_card_03.setRoundTopRight(50);
+        panel_card_03.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        contenedor_flag_descripcion03.setBackground(new java.awt.Color(204, 204, 204));
+        contenedor_flag_descripcion03.setRoundBottomLeft(50);
+        contenedor_flag_descripcion03.setRoundBottomRight(50);
+        contenedor_flag_descripcion03.setRoundTopLeft(50);
+        contenedor_flag_descripcion03.setRoundTopRight(50);
+        contenedor_flag_descripcion03.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        descripcion2.setBackground(new java.awt.Color(255, 255, 255));
+        descripcion2.setRoundBottomLeft(50);
+        descripcion2.setRoundBottomRight(50);
+        descripcion2.setRoundTopLeft(50);
+        descripcion2.setRoundTopRight(50);
+        descripcion2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btn_ir_pago_03.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/flecha.png"))); // NOI18N
+        btn_ir_pago_03.setColor1(new java.awt.Color(0, 0, 0));
+        btn_ir_pago_03.setColor2(new java.awt.Color(102, 0, 204));
+        descripcion2.add(btn_ir_pago_03, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, 42, -1));
+
+        precio03.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        precio03.setText("S/. 16200");
+        descripcion2.add(precio03, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
+
+        especificacion_ida_o_vuelta03.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        especificacion_ida_o_vuelta03.setForeground(new java.awt.Color(153, 0, 204));
+        especificacion_ida_o_vuelta03.setText("Ida y vuelta");
+        descripcion2.add(especificacion_ida_o_vuelta03, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
+
+        contendor_modalidad_viaje03.setBackground(new java.awt.Color(226, 203, 253));
+        contendor_modalidad_viaje03.setRoundBottomLeft(10);
+        contendor_modalidad_viaje03.setRoundBottomRight(10);
+        contendor_modalidad_viaje03.setRoundTopLeft(10);
+        contendor_modalidad_viaje03.setRoundTopRight(10);
+
+        tag_modalidad03.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        tag_modalidad03.setText("Económico");
+        tag_modalidad01.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout contendor_modalidad_viaje03Layout = new javax.swing.GroupLayout(contendor_modalidad_viaje03);
+        contendor_modalidad_viaje03.setLayout(contendor_modalidad_viaje03Layout);
+        contendor_modalidad_viaje03Layout.setHorizontalGroup(
+            contendor_modalidad_viaje03Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(contendor_modalidad_viaje03Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(tag_modalidad03, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        contendor_modalidad_viaje03Layout.setVerticalGroup(
+            contendor_modalidad_viaje03Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(contendor_modalidad_viaje03Layout.createSequentialGroup()
+                .addComponent(tag_modalidad03)
+                .addGap(0, 4, Short.MAX_VALUE))
+        );
+
+        descripcion2.add(contendor_modalidad_viaje03, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 80, 20));
+
+        lugar03.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        lugar03.setText("Venecia");
+        descripcion2.add(lugar03, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+
+        contenedor_flag_descripcion03.add(descripcion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 25, 290, 110));
+
+        flag_descuento03.setBackground(new java.awt.Color(153, 0, 204));
+        flag_descuento03.setRoundBottomLeft(50);
+        flag_descuento03.setRoundTopLeft(50);
+        flag_descuento03.setRoundTopRight(50);
+        flag_descuento03.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        descuento_03.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        descuento_03.setForeground(new java.awt.Color(255, 255, 255));
+        descuento_03.setText("10% dcto.");
+        flag_descuento03.add(descuento_03, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -4, 60, 30));
+
+        contenedor_flag_descripcion03.add(flag_descuento03, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 80, 50));
+
+        label_fecha_ida_vuelta03.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        label_fecha_ida_vuelta03.setText("Ida 14/08/2023 . vuelta 17/08/2023");
+        contenedor_flag_descripcion03.add(label_fecha_ida_vuelta03, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 200, 20));
+
+        panel_card_03.add(contenedor_flag_descripcion03, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 292, 130));
+
+        imagen_panel_card_03.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/minuaturas_de_vuelos/venecia.jpg"))); // NOI18N
+        panel_card_03.add(imagen_panel_card_03, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        Contenido.add(panel_card_03, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 520, -1, 290));
+
+        panel_card_04.setBackground(new java.awt.Color(108, 74, 148));
+        panel_card_04.setRoundBottomLeft(50);
+        panel_card_04.setRoundBottomRight(50);
+        panel_card_04.setRoundTopLeft(50);
+        panel_card_04.setRoundTopRight(50);
+        panel_card_04.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        contenedor_flag_descripcion04.setBackground(new java.awt.Color(204, 204, 204));
+        contenedor_flag_descripcion04.setRoundBottomLeft(50);
+        contenedor_flag_descripcion04.setRoundBottomRight(50);
+        contenedor_flag_descripcion04.setRoundTopLeft(50);
+        contenedor_flag_descripcion04.setRoundTopRight(50);
+        contenedor_flag_descripcion04.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        descripcion04.setBackground(new java.awt.Color(255, 255, 255));
+        descripcion04.setRoundBottomLeft(50);
+        descripcion04.setRoundBottomRight(50);
+        descripcion04.setRoundTopLeft(50);
+        descripcion04.setRoundTopRight(50);
+        descripcion04.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btn_ir_pago_04.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/flecha.png"))); // NOI18N
+        btn_ir_pago_04.setColor1(new java.awt.Color(0, 0, 0));
+        btn_ir_pago_04.setColor2(new java.awt.Color(102, 0, 204));
+        descripcion04.add(btn_ir_pago_04, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, 42, -1));
+
+        precio04.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        precio04.setText("S/. 13200");
+        descripcion04.add(precio04, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
+
+        especificacion_ida_o_vuelta04.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        especificacion_ida_o_vuelta04.setForeground(new java.awt.Color(153, 0, 204));
+        especificacion_ida_o_vuelta04.setText("Ida y vuelta");
+        descripcion04.add(especificacion_ida_o_vuelta04, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
+
+        contendor_modalidad_viaje04.setBackground(new java.awt.Color(226, 203, 253));
+        contendor_modalidad_viaje04.setRoundBottomLeft(10);
+        contendor_modalidad_viaje04.setRoundBottomRight(10);
+        contendor_modalidad_viaje04.setRoundTopLeft(10);
+        contendor_modalidad_viaje04.setRoundTopRight(10);
+
+        tag_modalidad04.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        tag_modalidad04.setText("Económico");
+        tag_modalidad01.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout contendor_modalidad_viaje04Layout = new javax.swing.GroupLayout(contendor_modalidad_viaje04);
+        contendor_modalidad_viaje04.setLayout(contendor_modalidad_viaje04Layout);
+        contendor_modalidad_viaje04Layout.setHorizontalGroup(
+            contendor_modalidad_viaje04Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(contendor_modalidad_viaje04Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(tag_modalidad04, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        contendor_modalidad_viaje04Layout.setVerticalGroup(
+            contendor_modalidad_viaje04Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(contendor_modalidad_viaje04Layout.createSequentialGroup()
+                .addComponent(tag_modalidad04)
+                .addGap(0, 4, Short.MAX_VALUE))
+        );
+
+        descripcion04.add(contendor_modalidad_viaje04, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 80, 20));
+
+        lugar04.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        lugar04.setText("Bogota");
+        descripcion04.add(lugar04, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+
+        contenedor_flag_descripcion04.add(descripcion04, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 25, 290, 110));
+
+        flag_descuento04.setBackground(new java.awt.Color(153, 0, 204));
+        flag_descuento04.setRoundBottomLeft(50);
+        flag_descuento04.setRoundTopLeft(50);
+        flag_descuento04.setRoundTopRight(50);
+        flag_descuento04.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        descuento_04.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        descuento_04.setForeground(new java.awt.Color(255, 255, 255));
+        descuento_04.setText("12% dcto.");
+        flag_descuento04.add(descuento_04, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -4, 60, 30));
+
+        contenedor_flag_descripcion04.add(flag_descuento04, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 80, 50));
+
+        label_fecha_ida_vuelta04.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        label_fecha_ida_vuelta04.setText("Ida 14/08/2023 . vuelta 24/08/2023");
+        contenedor_flag_descripcion04.add(label_fecha_ida_vuelta04, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 200, 20));
+
+        panel_card_04.add(contenedor_flag_descripcion04, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 292, 130));
+
+        imagen_panel_card_04.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/minuaturas_de_vuelos/bogota.jpg"))); // NOI18N
+        panel_card_04.add(imagen_panel_card_04, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        Contenido.add(panel_card_04, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 830, -1, 290));
+
+        panel_card_05.setBackground(new java.awt.Color(108, 74, 148));
+        panel_card_05.setRoundBottomLeft(50);
+        panel_card_05.setRoundBottomRight(50);
+        panel_card_05.setRoundTopLeft(50);
+        panel_card_05.setRoundTopRight(50);
+        panel_card_05.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        contenedor_flag_descripcion05.setBackground(new java.awt.Color(204, 204, 204));
+        contenedor_flag_descripcion05.setRoundBottomLeft(50);
+        contenedor_flag_descripcion05.setRoundBottomRight(50);
+        contenedor_flag_descripcion05.setRoundTopLeft(50);
+        contenedor_flag_descripcion05.setRoundTopRight(50);
+        contenedor_flag_descripcion05.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        descripcion05.setBackground(new java.awt.Color(255, 255, 255));
+        descripcion05.setRoundBottomLeft(50);
+        descripcion05.setRoundBottomRight(50);
+        descripcion05.setRoundTopLeft(50);
+        descripcion05.setRoundTopRight(50);
+        descripcion05.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btn_ir_pago_05.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/flecha.png"))); // NOI18N
+        btn_ir_pago_05.setColor1(new java.awt.Color(0, 0, 0));
+        btn_ir_pago_05.setColor2(new java.awt.Color(102, 0, 204));
+        descripcion05.add(btn_ir_pago_05, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, 42, -1));
+
+        precio05.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        precio05.setText("S/. 14200");
+        descripcion05.add(precio05, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
+
+        especificacion_ida_o_vuelta05.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        especificacion_ida_o_vuelta05.setForeground(new java.awt.Color(153, 0, 204));
+        especificacion_ida_o_vuelta05.setText("Ida y vuelta");
+        descripcion05.add(especificacion_ida_o_vuelta05, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
+
+        contendor_modalidad_viaje05.setBackground(new java.awt.Color(226, 203, 253));
+        contendor_modalidad_viaje05.setRoundBottomLeft(10);
+        contendor_modalidad_viaje05.setRoundBottomRight(10);
+        contendor_modalidad_viaje05.setRoundTopLeft(10);
+        contendor_modalidad_viaje05.setRoundTopRight(10);
+
+        tag_modalidad05.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        tag_modalidad05.setText("Económico");
+        tag_modalidad01.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout contendor_modalidad_viaje05Layout = new javax.swing.GroupLayout(contendor_modalidad_viaje05);
+        contendor_modalidad_viaje05.setLayout(contendor_modalidad_viaje05Layout);
+        contendor_modalidad_viaje05Layout.setHorizontalGroup(
+            contendor_modalidad_viaje05Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(contendor_modalidad_viaje05Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(tag_modalidad05, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        contendor_modalidad_viaje05Layout.setVerticalGroup(
+            contendor_modalidad_viaje05Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(contendor_modalidad_viaje05Layout.createSequentialGroup()
+                .addComponent(tag_modalidad05)
+                .addGap(0, 4, Short.MAX_VALUE))
+        );
+
+        descripcion05.add(contendor_modalidad_viaje05, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 80, 20));
+
+        lugar05.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        lugar05.setText("París");
+        descripcion05.add(lugar05, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+
+        contenedor_flag_descripcion05.add(descripcion05, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 25, 290, 110));
+
+        flag_descuento05.setBackground(new java.awt.Color(153, 0, 204));
+        flag_descuento05.setRoundBottomLeft(50);
+        flag_descuento05.setRoundTopLeft(50);
+        flag_descuento05.setRoundTopRight(50);
+        flag_descuento05.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        descuento_05.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        descuento_05.setForeground(new java.awt.Color(255, 255, 255));
+        descuento_05.setText("22% dcto.");
+        flag_descuento05.add(descuento_05, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -4, 60, 30));
+
+        contenedor_flag_descripcion05.add(flag_descuento05, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 80, 50));
+
+        label_fecha_ida_vuelta05.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        label_fecha_ida_vuelta05.setText("Ida 14/08/2023 . vuelta 24/08/2023");
+        contenedor_flag_descripcion05.add(label_fecha_ida_vuelta05, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 200, 20));
+
+        panel_card_05.add(contenedor_flag_descripcion05, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 292, 130));
+
+        imagen_panel_card_05.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/minuaturas_de_vuelos/paris.jpg"))); // NOI18N
+        panel_card_05.add(imagen_panel_card_05, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        Contenido.add(panel_card_05, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 830, -1, 290));
+
+        panel_card_06.setBackground(new java.awt.Color(108, 74, 148));
+        panel_card_06.setRoundBottomLeft(50);
+        panel_card_06.setRoundBottomRight(50);
+        panel_card_06.setRoundTopLeft(50);
+        panel_card_06.setRoundTopRight(50);
+        panel_card_06.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        contenedor_flag_descripcion5.setBackground(new java.awt.Color(204, 204, 204));
+        contenedor_flag_descripcion5.setRoundBottomLeft(50);
+        contenedor_flag_descripcion5.setRoundBottomRight(50);
+        contenedor_flag_descripcion5.setRoundTopLeft(50);
+        contenedor_flag_descripcion5.setRoundTopRight(50);
+        contenedor_flag_descripcion5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        descripcion06.setBackground(new java.awt.Color(255, 255, 255));
+        descripcion06.setRoundBottomLeft(50);
+        descripcion06.setRoundBottomRight(50);
+        descripcion06.setRoundTopLeft(50);
+        descripcion06.setRoundTopRight(50);
+        descripcion06.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btn_ir_pago_06.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/flecha.png"))); // NOI18N
+        btn_ir_pago_06.setColor1(new java.awt.Color(0, 0, 0));
+        btn_ir_pago_06.setColor2(new java.awt.Color(102, 0, 204));
+        descripcion06.add(btn_ir_pago_06, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, 42, -1));
+
+        precio06.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        precio06.setText("S/. 16200");
+        descripcion06.add(precio06, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
+
+        especificacion_ida_o_vuelta06.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        especificacion_ida_o_vuelta06.setForeground(new java.awt.Color(153, 0, 204));
+        especificacion_ida_o_vuelta06.setText("Ida y vuelta");
+        descripcion06.add(especificacion_ida_o_vuelta06, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
+
+        contendor_modalidad_viaje06.setBackground(new java.awt.Color(226, 203, 253));
+        contendor_modalidad_viaje06.setRoundBottomLeft(10);
+        contendor_modalidad_viaje06.setRoundBottomRight(10);
+        contendor_modalidad_viaje06.setRoundTopLeft(10);
+        contendor_modalidad_viaje06.setRoundTopRight(10);
+
+        tag_modalidad06.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        tag_modalidad06.setText("Económico");
+        tag_modalidad01.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout contendor_modalidad_viaje06Layout = new javax.swing.GroupLayout(contendor_modalidad_viaje06);
+        contendor_modalidad_viaje06.setLayout(contendor_modalidad_viaje06Layout);
+        contendor_modalidad_viaje06Layout.setHorizontalGroup(
+            contendor_modalidad_viaje06Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(contendor_modalidad_viaje06Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(tag_modalidad06, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        contendor_modalidad_viaje06Layout.setVerticalGroup(
+            contendor_modalidad_viaje06Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(contendor_modalidad_viaje06Layout.createSequentialGroup()
+                .addComponent(tag_modalidad06)
+                .addGap(0, 4, Short.MAX_VALUE))
+        );
+
+        descripcion06.add(contendor_modalidad_viaje06, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 80, 20));
+
+        lugar06.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        lugar06.setText("Orlando");
+        descripcion06.add(lugar06, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+
+        contenedor_flag_descripcion5.add(descripcion06, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 25, 290, 110));
+
+        flag_descuento06.setBackground(new java.awt.Color(153, 0, 204));
+        flag_descuento06.setRoundBottomLeft(50);
+        flag_descuento06.setRoundTopLeft(50);
+        flag_descuento06.setRoundTopRight(50);
+        flag_descuento06.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        descuento_06.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        descuento_06.setForeground(new java.awt.Color(255, 255, 255));
+        descuento_06.setText("10% dcto.");
+        flag_descuento06.add(descuento_06, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -4, 60, 30));
+
+        contenedor_flag_descripcion5.add(flag_descuento06, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 80, 50));
+
+        label_fecha_ida_vuelta06.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        label_fecha_ida_vuelta06.setText("Ida 14/08/2023 . vuelta 24/08/2023");
+        contenedor_flag_descripcion5.add(label_fecha_ida_vuelta06, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 200, 20));
+
+        panel_card_06.add(contenedor_flag_descripcion5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 292, 130));
+
+        imagen_panel_card_06.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/minuaturas_de_vuelos/orlando_florida.jpg"))); // NOI18N
+        panel_card_06.add(imagen_panel_card_06, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        Contenido.add(panel_card_06, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 830, -1, 290));
+
+        panel_scroll.setViewportView(Contenido);
+
+        panel_Principal.add(panel_scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1040, 830));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panel_Principal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panel_Principal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panel_Principal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 787, Short.MAX_VALUE)
+            .addComponent(panel_Principal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_inicar_sesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_inicar_sesionActionPerformed
+    private void btn_registrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registrarseActionPerformed
+        Registro_de_usuarios registro_de_usuarios = new Registro_de_usuarios();
+        registro_de_usuarios.setVisible(true);
+        registro_de_usuarios.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btn_registrarseActionPerformed
+
+    private void btn_iniciar_sesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_iniciar_sesionActionPerformed
         Inicio_de_sesion inicio_de_sesion = new Inicio_de_sesion();
         inicio_de_sesion.setVisible(true);
         inicio_de_sesion.setLocationRelativeTo(null);
         dispose();
-    }//GEN-LAST:event_btn_inicar_sesionActionPerformed
+    }//GEN-LAST:event_btn_iniciar_sesionActionPerformed
+
+    private void btn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_buscarActionPerformed
+
+    private void cb_origenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_origenActionPerformed
+
+    }//GEN-LAST:event_cb_origenActionPerformed
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Barra_de_menu;
+    private javax.swing.JPanel Contenido;
     private javax.swing.JSpinner Spinner_cantidad_pasajeros;
-    private swing.ButtonGradient btn_inicar_sesion;
-    private swing.ButtonGradient btn_registrarse;
-    private swing.ButtonGradient btn_registrarse1;
+    private IGU.util.ButtonGradient btn_buscar;
+    private IGU.util.ButtonGradient btn_iniciar_sesion;
+    private IGU.util.ButtonGradient btn_ir_pago_01;
+    private IGU.util.ButtonGradient btn_ir_pago_02;
+    private IGU.util.ButtonGradient btn_ir_pago_03;
+    private IGU.util.ButtonGradient btn_ir_pago_04;
+    private IGU.util.ButtonGradient btn_ir_pago_05;
+    private IGU.util.ButtonGradient btn_ir_pago_06;
+    private IGU.util.ButtonGradient btn_registrarse;
     private com.toedter.calendar.JCalendar calendario_ida;
     private com.toedter.calendar.JCalendar calendario_regreso;
     private javax.swing.JComboBox<String> cb_destino;
     private javax.swing.JComboBox<String> cb_forma_de_viaje;
     private javax.swing.JComboBox<String> cb_origen;
     private javax.swing.JComboBox<String> cb_tipo_de_viaje;
+    private IGU.util.PanelRound contendor_modalidad_viaje01;
+    private IGU.util.PanelRound contendor_modalidad_viaje02;
+    private IGU.util.PanelRound contendor_modalidad_viaje03;
+    private IGU.util.PanelRound contendor_modalidad_viaje04;
+    private IGU.util.PanelRound contendor_modalidad_viaje05;
+    private IGU.util.PanelRound contendor_modalidad_viaje06;
+    private IGU.util.PanelRound contenedor_flag_descripcion;
+    private IGU.util.PanelRound contenedor_flag_descripcion03;
+    private IGU.util.PanelRound contenedor_flag_descripcion04;
+    private IGU.util.PanelRound contenedor_flag_descripcion05;
+    private IGU.util.PanelRound contenedor_flag_descripcion1;
+    private IGU.util.PanelRound contenedor_flag_descripcion5;
+    private IGU.util.PanelRound descripcion01;
+    private IGU.util.PanelRound descripcion02;
+    private IGU.util.PanelRound descripcion04;
+    private IGU.util.PanelRound descripcion05;
+    private IGU.util.PanelRound descripcion06;
+    private IGU.util.PanelRound descripcion2;
+    private javax.swing.JLabel descuento_01;
+    private javax.swing.JLabel descuento_02;
+    private javax.swing.JLabel descuento_03;
+    private javax.swing.JLabel descuento_04;
+    private javax.swing.JLabel descuento_05;
+    private javax.swing.JLabel descuento_06;
+    private javax.swing.JLabel especificacion_ida_o_vuelta01;
+    private javax.swing.JLabel especificacion_ida_o_vuelta02;
+    private javax.swing.JLabel especificacion_ida_o_vuelta03;
+    private javax.swing.JLabel especificacion_ida_o_vuelta04;
+    private javax.swing.JLabel especificacion_ida_o_vuelta05;
+    private javax.swing.JLabel especificacion_ida_o_vuelta06;
+    private IGU.util.PanelRound flag_descuento01;
+    private IGU.util.PanelRound flag_descuento02;
+    private IGU.util.PanelRound flag_descuento03;
+    private IGU.util.PanelRound flag_descuento04;
+    private IGU.util.PanelRound flag_descuento05;
+    private IGU.util.PanelRound flag_descuento06;
+    private javax.swing.JLabel imagen_panel_card_01;
+    private javax.swing.JLabel imagen_panel_card_02;
+    private javax.swing.JLabel imagen_panel_card_03;
+    private javax.swing.JLabel imagen_panel_card_04;
+    private javax.swing.JLabel imagen_panel_card_05;
+    private javax.swing.JLabel imagen_panel_card_06;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel label_cantidad_de_pasajeros;
     private javax.swing.JLabel label_decha_de_ida;
     private javax.swing.JLabel label_decha_de_regreso;
     private javax.swing.JLabel label_destino;
+    private javax.swing.JLabel label_fecha_ida_vuelta01;
+    private javax.swing.JLabel label_fecha_ida_vuelta02;
+    private javax.swing.JLabel label_fecha_ida_vuelta03;
+    private javax.swing.JLabel label_fecha_ida_vuelta04;
+    private javax.swing.JLabel label_fecha_ida_vuelta05;
+    private javax.swing.JLabel label_fecha_ida_vuelta06;
     private javax.swing.JLabel label_origen;
+    private javax.swing.JLabel lugar01;
+    private javax.swing.JLabel lugar02;
+    private javax.swing.JLabel lugar03;
+    private javax.swing.JLabel lugar04;
+    private javax.swing.JLabel lugar05;
+    private javax.swing.JLabel lugar06;
     private javax.swing.JPanel panel_Principal;
-    private test.PanelRound panel_de_busqueda;
+    private IGU.util.PanelRound panel_card_01;
+    private IGU.util.PanelRound panel_card_02;
+    private IGU.util.PanelRound panel_card_03;
+    private IGU.util.PanelRound panel_card_04;
+    private IGU.util.PanelRound panel_card_05;
+    private IGU.util.PanelRound panel_card_06;
+    private IGU.util.PanelRound panel_de_busqueda;
+    private javax.swing.JScrollPane panel_scroll;
+    private javax.swing.JLabel precio01;
+    private javax.swing.JLabel precio02;
+    private javax.swing.JLabel precio03;
+    private javax.swing.JLabel precio04;
+    private javax.swing.JLabel precio05;
+    private javax.swing.JLabel precio06;
+    private javax.swing.JLabel tag_modalidad01;
+    private javax.swing.JLabel tag_modalidad02;
+    private javax.swing.JLabel tag_modalidad03;
+    private javax.swing.JLabel tag_modalidad04;
+    private javax.swing.JLabel tag_modalidad05;
+    private javax.swing.JLabel tag_modalidad06;
     // End of variables declaration//GEN-END:variables
 }

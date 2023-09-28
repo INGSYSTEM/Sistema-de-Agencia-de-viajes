@@ -1,4 +1,4 @@
-package swing;
+package IGU.util;
 
 import java.awt.AlphaComposite;
 import java.awt.Color;

@@ -76,7 +76,7 @@ public class Cliente extends Persona {
             ps.setString(1, usuario); // Asigna el valor del usuario
             try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
-                    return rs.getString("genero"); // Devuelve el nombre del cliente si se encuentra
+                    return rs.getString("genero"); // Devuelve el género del cliente si se encuentra
                 }
             }
         } catch (SQLException e) {

@@ -1,4 +1,4 @@
-package test;
+package IGU.util;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;

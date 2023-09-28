@@ -24,7 +24,8 @@ public class Inicio_de_sesion extends javax.swing.JFrame {
      */
     public Inicio_de_sesion() {
         initComponents();
-        setIconImage(new ImageIcon(getClass().getResource("/favicon/luminous_horizons.png")).getImage());
+        setIconImage(new ImageIcon(getClass().getResource("/favicon/Nuevo_logo_de_Luminous_Horizons.png")).getImage());
+        this.setResizable(false);
     }
     
     /**
@@ -51,29 +52,29 @@ public class Inicio_de_sesion extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("INICIO DE SESIÓN | Luminous Horizons");
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setBackground(new java.awt.Color(24, 7, 43));
         jPanel1.setMinimumSize(new java.awt.Dimension(670, 687));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        LuminousHorizons.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/Luminous Horizons.png"))); // NOI18N
-        jPanel1.add(LuminousHorizons, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, -1, -1));
+        LuminousHorizons.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/Nuevo logo de Luminous Horizons.png"))); // NOI18N
+        jPanel1.add(LuminousHorizons, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, -1, -1));
 
         labelUsuario.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
-        labelUsuario.setForeground(new java.awt.Color(226, 199, 153));
+        labelUsuario.setForeground(new java.awt.Color(226, 203, 253));
         labelUsuario.setText("Usuario:");
         jPanel1.add(labelUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 360, -1, -1));
 
         labelPassword.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
-        labelPassword.setForeground(new java.awt.Color(226, 199, 153));
+        labelPassword.setForeground(new java.awt.Color(226, 203, 253));
         labelPassword.setText("Contraseña:");
         jPanel1.add(labelPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 460, -1, -1));
 
-        inputUsuario.setBackground(new java.awt.Color(51, 51, 51));
+        inputUsuario.setBackground(new java.awt.Color(24, 7, 43));
         inputUsuario.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
         inputUsuario.setForeground(new java.awt.Color(102, 102, 102));
         inputUsuario.setText("Ingresa tu usuario");
         inputUsuario.setToolTipText("Usuario");
-        inputUsuario.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(226, 199, 153), 3, true), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+        inputUsuario.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(226, 203, 253), 3, true), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
         inputUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 inputUsuarioMouseClicked(evt);
@@ -86,12 +87,12 @@ public class Inicio_de_sesion extends javax.swing.JFrame {
         });
         jPanel1.add(inputUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, 520, 40));
 
-        inputPassword.setBackground(new java.awt.Color(51, 51, 51));
+        inputPassword.setBackground(new java.awt.Color(24, 7, 43));
         inputPassword.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
         inputPassword.setForeground(new java.awt.Color(102, 102, 102));
         inputPassword.setText("••••••••••");
         inputPassword.setToolTipText("Contraseña");
-        inputPassword.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(226, 199, 153), 3, true)));
+        inputPassword.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(226, 203, 253), 3, true)));
         inputPassword.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 inputPasswordMouseClicked(evt);
@@ -104,9 +105,9 @@ public class Inicio_de_sesion extends javax.swing.JFrame {
         });
         jPanel1.add(inputPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 500, 520, 40));
 
-        btn_inicio_de_sesion.setBackground(new java.awt.Color(226, 199, 153));
+        btn_inicio_de_sesion.setBackground(new java.awt.Color(226, 203, 253));
         btn_inicio_de_sesion.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
-        btn_inicio_de_sesion.setForeground(new java.awt.Color(51, 51, 51));
+        btn_inicio_de_sesion.setForeground(new java.awt.Color(24, 7, 43));
         btn_inicio_de_sesion.setText("Iniciar sesión");
         btn_inicio_de_sesion.setBorderPainted(false);
         btn_inicio_de_sesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -117,7 +118,7 @@ public class Inicio_de_sesion extends javax.swing.JFrame {
         });
         jPanel1.add(btn_inicio_de_sesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 600, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/wave.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/wave-lavanda.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 140));
 
         LabelDerechosDeAutor.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
@@ -155,7 +156,7 @@ public class Inicio_de_sesion extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 670, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -181,7 +182,7 @@ public class Inicio_de_sesion extends javax.swing.JFrame {
                 }else if (genero.equals("mujer")) {
                     saludo = "Bienvenida";
                 }
-                JOptionPane.showMessageDialog(null, "Se incio sesión de manera exitosa, " + nombre + " ¡"+ saludo +"!", "Validación de credenciales",JOptionPane.INFORMATION_MESSAGE, icono);
+                JOptionPane.showMessageDialog(null, "Se incio sesión de manera exitosa, " + nombre + " ¡"+ saludo +"!", "VALIDACIÓN DE CREDENCIALES",JOptionPane.INFORMATION_MESSAGE, icono);
                 /**
                 * Este procedimiento permite mostrar la ventana siguiente
                 */
@@ -193,7 +194,7 @@ public class Inicio_de_sesion extends javax.swing.JFrame {
                 dispose();
             }else {
                 Icon icono = new ImageIcon(getClass().getResource("/icon/error.png"));
-                JOptionPane.showMessageDialog(null, "Usuario o clave incorrecta", "Validación de credenciales",JOptionPane.ERROR_MESSAGE, icono);
+                JOptionPane.showMessageDialog(null, "Usuario o clave incorrecta", "VALIDACIÓN DE CREDENCIALES",JOptionPane.ERROR_MESSAGE, icono);
             }
         } catch (SQLException ex) {
             Logger.getLogger(Inicio_de_sesion.class.getName()).log(Level.SEVERE, null, ex);
@@ -238,7 +239,14 @@ public class Inicio_de_sesion extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_recuperarContrasenaActionPerformed
 
     private void btn_ingresar_como_invitadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ingresar_como_invitadoActionPerformed
-        Panel_de_invitado panel_de_invitado = new Panel_de_invitado();
+        Panel_de_invitado panel_de_invitado = null;
+        try {
+            panel_de_invitado = new Panel_de_invitado();
+        } catch (SQLException ex) {
+            Logger.getLogger(Inicio_de_sesion.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Inicio_de_sesion.class.getName()).log(Level.SEVERE, null, ex);
+        }
         panel_de_invitado.setVisible(true);
         panel_de_invitado.setLocationRelativeTo(null);
         dispose();

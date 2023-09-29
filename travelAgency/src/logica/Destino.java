@@ -10,11 +10,9 @@ package logica;
  */
 class Destino {
     private String nombreDestino;
-    private double precio;
     
     // Constructor
-    public Destino(String nombreDestino, double precio) {
+    public Destino(String nombreDestino) {
         this.nombreDestino = nombreDestino;
-        this.precio = precio;
     }
 }

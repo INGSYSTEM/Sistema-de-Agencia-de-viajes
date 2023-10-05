@@ -4,13 +4,16 @@
  */
 package IGU;
 
+import java.sql.SQLException;
 import java.util.Arrays;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import javax.swing.Icon;
 import javax.swing.JOptionPane;
+import logica.Cliente;
+import logica.Configuraciones;
 
 /**
  *
@@ -18,45 +21,8 @@ import javax.swing.JOptionPane;
  */
 public class Registro_de_usuarios extends javax.swing.JFrame {
     
-    // Función para validar email
-    
-    public boolean isValidEmail(String email) {
-        // Patrón de expresión regular para verificar direcciones de correo electrónico
-        String regex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
-
-        // Compila la expresión regular en un patrón
-        Pattern pattern = Pattern.compile(regex);
-
-        // Crea un objeto Matcher para la dirección de correo electrónico proporcionada
-        Matcher matcher = pattern.matcher(email);
-
-        // Comprueba si la dirección de correo electrónico coincide con el patrón
-        return matcher.matches();
-    }
-
-    // Función para validar contraseñas fuertes
-    
-    public boolean isStrongPassword(char[] password) {
-        String passwordStr = new String(password);
-
-        // Verifica si la contraseña tiene al menos 8 caracteres
-        if (passwordStr.length() < 8) {
-            return false;
-        }
-
-        // Verifica si la contraseña contiene al menos una letra mayúscula
-        if (!passwordStr.matches(".*[A-Z].*")) {
-            return false;
-        }
-
-        // Verifica si la contraseña contiene al menos un carácter especial
-        if (!passwordStr.matches(".*[!@#$%^&*()].*")) {
-            return false;
-        }
-
-        // Si pasa todas las verificaciones, la contraseña se considera fuerte
-        return true;
-    }
+    Configuraciones configuraciones;
+       
 
     
     /**
@@ -64,6 +30,7 @@ public class Registro_de_usuarios extends javax.swing.JFrame {
      */
     public Registro_de_usuarios() {
         initComponents();
+        configuraciones = new Configuraciones();
         setIconImage(new ImageIcon(getClass().getResource("/favicon/Nuevo_logo_de_Luminous_Horizons.png")).getImage());
         cb_genero.setSelectedIndex(-1);
         this.setResizable(false);
@@ -175,11 +142,13 @@ public class Registro_de_usuarios extends javax.swing.JFrame {
 
         input_repetir_contrasena.setBackground(new java.awt.Color(24, 7, 43));
         input_repetir_contrasena.setForeground(new java.awt.Color(255, 255, 255));
+        input_repetir_contrasena.setToolTipText("Al menos la contraseña debe de tener una longitud de 8 digitos y debe de tener al menos una mayúscula y un caracter especial.");
         input_repetir_contrasena.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(226, 203, 253), 3, true));
         jPanel1.add(input_repetir_contrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 310, 270, 40));
 
         input_contrasena.setBackground(new java.awt.Color(24, 7, 43));
         input_contrasena.setForeground(new java.awt.Color(255, 255, 255));
+        input_contrasena.setToolTipText("Al menos la contraseña debe de tener una longitud de 8 digitos y debe de tener al menos una mayúscula y un caracter especial.");
         input_contrasena.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(226, 203, 253), 3, true));
         jPanel1.add(input_contrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 270, 40));
 
@@ -285,47 +254,69 @@ public class Registro_de_usuarios extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_limpiarActionPerformed
 
     private void btn_registrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registrarActionPerformed
-        // Validar el email
-        boolean emailValido = isValidEmail(input_email.getText());
-        System.out.println(emailValido);
-
-        // Validar la contraseña
-        boolean contrasenaFuerte = isStrongPassword(input_contrasena.getPassword());
-
-        // Comparar contraseñas
-        boolean contrasenasCoinciden = Arrays.equals(input_contrasena.getPassword(), input_repetir_contrasena.getPassword());
-        
-        boolean verificarCampos = input_nombres.getText().isEmpty() || input_apellido.getText().isEmpty() ||
-                input_email.getText().isEmpty() || input_nombre_usuario.getText().isEmpty() ||
-                new String(input_contrasena.getPassword()).equals("") || new String(input_repetir_contrasena.getPassword()).equals("") ||
-                cb_genero.getSelectedItem().equals("") || checkB_terminos.isSelected() == false ||
-                checkB_tratamiento.isSelected() == false;
-
-
-        // Mensaje de respuesta
-        if (emailValido && contrasenaFuerte && contrasenasCoinciden) {
-            Icon icono = new ImageIcon(getClass().getResource("/icon/verificacion.png"));
-            JOptionPane.showMessageDialog(null, "Se registró con éxito.", "VALIDACIÓN", JOptionPane.WARNING_MESSAGE, icono);
-        } else {
-            StringBuilder mensaje = new StringBuilder();
+        try {
+            // Validar el email
+            boolean emailValido = configuraciones.isValidEmail(input_email.getText());
+            System.out.println(emailValido);
             
-            if (!emailValido) {
-                mensaje.append("El email ").append(input_email.getText()).append(" no es válido.");
-            }
-
-            if (!contrasenaFuerte) {
-                mensaje.append("\nLa contraseña proporcionada no cumple con las condiciones necesarias para su seguridad.");
-            }
-
-            if (!contrasenasCoinciden) {
-                mensaje.append("\nLas contraseñas no coinciden.");
-            }
+            // Validar la contraseña
+            boolean contrasenaFuerte = configuraciones.isStrongPassword(input_contrasena.getPassword());
             
-            if (verificarCampos) {
-                mensaje.append("\nCompleta todos los campos de los formularios");
+            // Comparar contraseñas
+            boolean contrasenasCoinciden = Arrays.equals(input_contrasena.getPassword(), input_repetir_contrasena.getPassword());
+            
+            boolean verificarCampos = input_nombres.getText().isEmpty() || input_apellido.getText().isEmpty() ||
+                    input_email.getText().isEmpty() || input_nombre_usuario.getText().isEmpty() ||
+                    new String(input_contrasena.getPassword()).equals("") || new String(input_repetir_contrasena.getPassword()).equals("") ||
+                    cb_genero.getSelectedItem().equals("") || checkB_terminos.isSelected() == false ||
+                    checkB_tratamiento.isSelected() == false;
+            
+            Cliente cliente = new Cliente(input_nombre_usuario.getText(),
+                    String.valueOf(input_contrasena.getPassword()),
+                    1, input_nombres.getText(),
+                    input_apellido.getText(),
+                    cb_genero.getSelectedItem().toString(),
+                    input_email.getText());
+            String rpta = null;
+            rpta = cliente.verificarEmailExistente(input_email.getText());
+            if (!rpta.equals("")) {
+                // Mensaje de respuesta
+                if (emailValido && contrasenaFuerte && contrasenasCoinciden) {
+                    configuraciones.insertarCliente(input_nombres.getText(),
+                            input_apellido.getText(), input_email.getText(), 
+                            input_nombre_usuario.getText(), input_contrasena.getPassword(), 
+                            cb_genero.getSelectedItem().toString());
+                    Icon icono = new ImageIcon(getClass().getResource("/icon/verificacion.png"));
+                    JOptionPane.showMessageDialog(null, "Se registró con éxito.", "VALIDACIÓN", JOptionPane.WARNING_MESSAGE, icono);
+                } else {
+                    StringBuilder mensaje = new StringBuilder();
+                    
+                    if (!emailValido) {
+                        mensaje.append("El email ").append(input_email.getText()).append(" no es válido.");
+                    }
+                    
+                    if (!contrasenaFuerte) {
+                        mensaje.append("\nLa contraseña proporcionada no cumple con las condiciones necesarias para su seguridad.");
+                    }
+                    
+                    if (!contrasenasCoinciden) {
+                        mensaje.append("\nLas contraseñas no coinciden.");
+                    }
+                    
+                    if (verificarCampos) {
+                        mensaje.append("\nCompleta todos los campos de los formularios");
+                    }
+                    Icon icono = new ImageIcon(getClass().getResource("/icon/informacion.png"));
+                    JOptionPane.showMessageDialog(null, mensaje.toString(), "INFORMACIÓN", JOptionPane.WARNING_MESSAGE, icono);
+                }
+            }else {
+                Icon icono = new ImageIcon(getClass().getResource("/icon/error.png"));
+                JOptionPane.showMessageDialog(null, "El email ya esta registrada en nuestra base de datos", "INFORMACIÓN", JOptionPane.ERROR_MESSAGE, icono);
             }
-            Icon icono = new ImageIcon(getClass().getResource("/icon/informacion.png"));
-            JOptionPane.showMessageDialog(null, mensaje.toString(), "INFORMACIÓN", JOptionPane.WARNING_MESSAGE, icono);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Registro_de_usuarios.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Registro_de_usuarios.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btn_registrarActionPerformed
 

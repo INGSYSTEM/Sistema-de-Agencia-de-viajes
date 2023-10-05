@@ -2,14 +2,14 @@ CREATE DATABASE [LuminousHorizons]
 GO
 USE [LuminousHorizons]
 GO
-/****** Object:  User [TestLuminousHorizons]    Script Date: 28/09/2023 16:37:00 ******/
+/****** Object:  User [TestLuminousHorizons]    Script Date: 05/10/2023 15:49:54 ******/
 CREATE USER [TestLuminousHorizons] FOR LOGIN [TestLuminousHorizons] WITH DEFAULT_SCHEMA=[dbo]
 GO
 ALTER ROLE [db_datareader] ADD MEMBER [TestLuminousHorizons]
 GO
 ALTER ROLE [db_datawriter] ADD MEMBER [TestLuminousHorizons]
 GO
-/****** Object:  Table [dbo].[ASIENTO]    Script Date: 28/09/2023 16:37:01 ******/
+/****** Object:  Table [dbo].[ASIENTO]    Script Date: 05/10/2023 15:49:54 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -26,7 +26,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[CLIENTE]    Script Date: 28/09/2023 16:37:01 ******/
+/****** Object:  Table [dbo].[CLIENTE]    Script Date: 05/10/2023 15:49:55 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -40,13 +40,14 @@ CREATE TABLE [dbo].[CLIENTE](
 	[contrasena] [varbinary](255) NOT NULL,
 	[genero] [varchar](25) NOT NULL,
 	[trabajaEmpresa] [tinyint] NOT NULL,
+	[codeVerificacion] [varchar](6) NULL,
 PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[DESTINO]    Script Date: 28/09/2023 16:37:01 ******/
+/****** Object:  Table [dbo].[DESTINO]    Script Date: 05/10/2023 15:49:55 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -60,7 +61,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[RESERVA]    Script Date: 28/09/2023 16:37:01 ******/
+/****** Object:  Table [dbo].[RESERVA]    Script Date: 05/10/2023 15:49:55 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -76,7 +77,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[RESERVA Y DESTINO]    Script Date: 28/09/2023 16:37:01 ******/
+/****** Object:  Table [dbo].[RESERVA Y DESTINO]    Script Date: 05/10/2023 15:49:55 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -92,7 +93,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[VUELO]    Script Date: 28/09/2023 16:37:01 ******/
+/****** Object:  Table [dbo].[VUELO]    Script Date: 05/10/2023 15:49:55 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -113,9 +114,9 @@ PRIMARY KEY CLUSTERED
 GO
 SET IDENTITY_INSERT [dbo].[CLIENTE] ON 
 GO
-INSERT [dbo].[CLIENTE] ([id], [nombre], [apellido], [email], [usuario], [contrasena], [genero], [trabajaEmpresa]) VALUES (1, N'Juan Bladimir', N'Romero Collazos', N'juanromerocollazos@gmail.com', N'Admin', 0x3ACA4A331944E44471E93EABED5F6933266B79F036A9FF3294AD79CC0692A807, N'hombre', 3)
+INSERT [dbo].[CLIENTE] ([id], [nombre], [apellido], [email], [usuario], [contrasena], [genero], [trabajaEmpresa], [codeVerificacion]) VALUES (1, N'Juan Bladimir', N'Romero Collazos', N'juanromerocollazos@gmail.com', N'Admin', 0x3ACA4A331944E44471E93EABED5F6933266B79F036A9FF3294AD79CC0692A807, N'hombre', 3, NULL)
 GO
-INSERT [dbo].[CLIENTE] ([id], [nombre], [apellido], [email], [usuario], [contrasena], [genero], [trabajaEmpresa]) VALUES (2, N'Briggitte del Milagro', N'Martinez Vidaurre', N'U22232825@utp.edu.pe', N'Clown', 0x5DDE754BF124B8D46F66F56C133644EE12763744B63AD54EABB06D37CC515779, N'mujer', 1)
+INSERT [dbo].[CLIENTE] ([id], [nombre], [apellido], [email], [usuario], [contrasena], [genero], [trabajaEmpresa], [codeVerificacion]) VALUES (2, N'Briggitte del Milagro', N'Martinez Vidaurre', N'U22232825@utp.edu.pe', N'Clown', 0x5DDE754BF124B8D46F66F56C133644EE12763744B63AD54EABB06D37CC515779, N'mujer', 1, NULL)
 GO
 SET IDENTITY_INSERT [dbo].[CLIENTE] OFF
 GO
@@ -3017,7 +3018,7 @@ SET IDENTITY_INSERT [dbo].[VUELO] OFF
 GO
 SET ANSI_PADDING ON
 GO
-/****** Object:  Index [UQ__CLIENTE__9AFF8FC694B56025]    Script Date: 28/09/2023 16:37:01 ******/
+/****** Object:  Index [UQ__CLIENTE__9AFF8FC6712AA46A]    Script Date: 05/10/2023 15:49:55 ******/
 ALTER TABLE [dbo].[CLIENTE] ADD UNIQUE NONCLUSTERED 
 (
 	[usuario] ASC
@@ -3025,7 +3026,7 @@ ALTER TABLE [dbo].[CLIENTE] ADD UNIQUE NONCLUSTERED
 GO
 SET ANSI_PADDING ON
 GO
-/****** Object:  Index [UQ__CLIENTE__AB6E616454CD6F30]    Script Date: 28/09/2023 16:37:01 ******/
+/****** Object:  Index [UQ__CLIENTE__AB6E61644CAE7A81]    Script Date: 05/10/2023 15:49:55 ******/
 ALTER TABLE [dbo].[CLIENTE] ADD UNIQUE NONCLUSTERED 
 (
 	[email] ASC

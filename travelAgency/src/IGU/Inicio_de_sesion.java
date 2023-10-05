@@ -235,7 +235,9 @@ public class Inicio_de_sesion extends javax.swing.JFrame {
     }//GEN-LAST:event_inputPasswordMouseClicked
 
     private void btn_recuperarContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_recuperarContrasenaActionPerformed
-        // TODO add your handling code here:
+        RecuperarContrasena recuperarContrasena = new RecuperarContrasena();
+        recuperarContrasena.setVisible(true);
+        recuperarContrasena.setLocationRelativeTo(null);
     }//GEN-LAST:event_btn_recuperarContrasenaActionPerformed
 
     private void btn_ingresar_como_invitadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ingresar_como_invitadoActionPerformed

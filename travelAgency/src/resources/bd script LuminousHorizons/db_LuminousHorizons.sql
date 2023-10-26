@@ -2,14 +2,14 @@ CREATE DATABASE [LuminousHorizons]
 GO
 USE [LuminousHorizons]
 GO
-/****** Object:  User [TestLuminousHorizons]    Script Date: 05/10/2023 15:49:54 ******/
+/****** Object:  User [TestLuminousHorizons]    Script Date: 16/10/2023 1:03:42 ******/
 CREATE USER [TestLuminousHorizons] FOR LOGIN [TestLuminousHorizons] WITH DEFAULT_SCHEMA=[dbo]
 GO
 ALTER ROLE [db_datareader] ADD MEMBER [TestLuminousHorizons]
 GO
 ALTER ROLE [db_datawriter] ADD MEMBER [TestLuminousHorizons]
 GO
-/****** Object:  Table [dbo].[ASIENTO]    Script Date: 05/10/2023 15:49:54 ******/
+/****** Object:  Table [dbo].[ASIENTO]    Script Date: 16/10/2023 1:03:42 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -26,7 +26,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[CLIENTE]    Script Date: 05/10/2023 15:49:55 ******/
+/****** Object:  Table [dbo].[CLIENTE]    Script Date: 16/10/2023 1:03:42 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -47,7 +47,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[DESTINO]    Script Date: 05/10/2023 15:49:55 ******/
+/****** Object:  Table [dbo].[DESTINO]    Script Date: 16/10/2023 1:03:42 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -61,7 +61,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[RESERVA]    Script Date: 05/10/2023 15:49:55 ******/
+/****** Object:  Table [dbo].[RESERVA]    Script Date: 16/10/2023 1:03:42 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -71,29 +71,24 @@ CREATE TABLE [dbo].[RESERVA](
 	[cliente_id] [int] NOT NULL,
 	[vuelo_id] [int] NOT NULL,
 	[fecha_reserva] [date] NOT NULL,
+	[hora_reserva] [time](0) NOT NULL,
+	[numero_orden] [varchar](20) NOT NULL,
+	[numero_vuelo] [varchar](20) NOT NULL,
+	[hora_embarque] [time](0) NOT NULL,
+	[hora_fin_embarque] [time](0) NOT NULL,
+	[equipaje] [varchar](225) NOT NULL,
+	[terminal] [int] NOT NULL,
+	[puerta] [int] NOT NULL,
+	[grupo_embarque] [varchar](50) NOT NULL,
+	[numero_reserva] [varchar](50) NOT NULL,
+	[Código_reserva] [varchar](50) NOT NULL,
 PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[RESERVA Y DESTINO]    Script Date: 05/10/2023 15:49:55 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[RESERVA Y DESTINO](
-	[id] [int] IDENTITY(1,1) NOT NULL,
-	[cliente_id] [int] NOT NULL,
-	[destino_id] [int] NOT NULL,
-	[fecha_reserva] [date] NOT NULL,
-PRIMARY KEY CLUSTERED 
-(
-	[id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[VUELO]    Script Date: 05/10/2023 15:49:55 ******/
+/****** Object:  Table [dbo].[VUELO]    Script Date: 16/10/2023 1:03:42 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -103,7 +98,7 @@ CREATE TABLE [dbo].[VUELO](
 	[origen] [varchar](255) NOT NULL,
 	[destino_id] [int] NOT NULL,
 	[fecha] [date] NOT NULL,
-	[hora] [time](7) NOT NULL,
+	[hora] [time](0) NOT NULL,
 	[capacidad] [int] NOT NULL,
 	[precio] [decimal](10, 2) NOT NULL,
 PRIMARY KEY CLUSTERED 
@@ -3018,7 +3013,7 @@ SET IDENTITY_INSERT [dbo].[VUELO] OFF
 GO
 SET ANSI_PADDING ON
 GO
-/****** Object:  Index [UQ__CLIENTE__9AFF8FC6712AA46A]    Script Date: 05/10/2023 15:49:55 ******/
+/****** Object:  Index [UQ__CLIENTE__9AFF8FC6712AA46A]    Script Date: 16/10/2023 1:03:42 ******/
 ALTER TABLE [dbo].[CLIENTE] ADD UNIQUE NONCLUSTERED 
 (
 	[usuario] ASC
@@ -3026,7 +3021,7 @@ ALTER TABLE [dbo].[CLIENTE] ADD UNIQUE NONCLUSTERED
 GO
 SET ANSI_PADDING ON
 GO
-/****** Object:  Index [UQ__CLIENTE__AB6E61644CAE7A81]    Script Date: 05/10/2023 15:49:55 ******/
+/****** Object:  Index [UQ__CLIENTE__AB6E61644CAE7A81]    Script Date: 16/10/2023 1:03:42 ******/
 ALTER TABLE [dbo].[CLIENTE] ADD UNIQUE NONCLUSTERED 
 (
 	[email] ASC
@@ -3042,12 +3037,6 @@ REFERENCES [dbo].[CLIENTE] ([id])
 GO
 ALTER TABLE [dbo].[RESERVA]  WITH CHECK ADD FOREIGN KEY([vuelo_id])
 REFERENCES [dbo].[VUELO] ([id])
-GO
-ALTER TABLE [dbo].[RESERVA Y DESTINO]  WITH CHECK ADD FOREIGN KEY([cliente_id])
-REFERENCES [dbo].[CLIENTE] ([id])
-GO
-ALTER TABLE [dbo].[RESERVA Y DESTINO]  WITH CHECK ADD FOREIGN KEY([destino_id])
-REFERENCES [dbo].[DESTINO] ([id])
 GO
 ALTER TABLE [dbo].[VUELO]  WITH CHECK ADD FOREIGN KEY([destino_id])
 REFERENCES [dbo].[DESTINO] ([id])

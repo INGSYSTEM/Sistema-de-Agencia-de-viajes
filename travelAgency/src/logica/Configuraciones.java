@@ -172,4 +172,23 @@ public class Configuraciones {
             conexion.connection.close();
         }
     }
+    
+    public int detectarCargo(String nombre) throws ClassNotFoundException, SQLException {
+        ConexionDB conexion = new ConexionDB();
+        String consultaSql = "SELECT trabajaEmpresa FROM CLIENTE WHERE nombre = ?";
+        try (PreparedStatement ps = conexion.connection.prepareStatement(consultaSql)) {
+            ps.setString(1, nombre.trim());
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getInt("trabajaEmpresa"); // Devuelve el valor numérico de "trabajaEmpresa"
+                }
+            }
+        } catch (SQLException e) {
+            System.err.println("Error: " + e);
+            throw e;
+        } finally {
+            conexion.connection.close();
+        }
+        return 0; // Valor predeterminado si no se encuentra ninguna coincidencia
+    }
 }

@@ -191,6 +191,7 @@ public class Inicio_de_sesion extends javax.swing.JFrame {
                 panel_de_control.setLocationRelativeTo(null);
                 panel_de_control.ColocarNombre(nombre);
                 panel_de_control.colorcarAvatar(genero);
+                panel_de_control.obtenerNombre(nombre);
                 dispose();
             }else {
                 Icon icono = new ImageIcon(getClass().getResource("/icon/error.png"));

@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="Asiento" package="logica" visibility="public" xPosition="297.0" yPosition="350.0">
+      <Fields>
+        <Field name="vuelo" type="Vuelo" visibility="private"/>
+        <Field name="numeroAsiento" type="int" visibility="private"/>
+        <Field name="clase" type="String" visibility="private"/>
+        <Field name="ocupado" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Vuelo" name="vuelo"/>
+          <Argument type="int" name="numeroAsiento"/>
+          <Argument type="String" name="clase"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Cliente" package="logica" visibility="public" xPosition="138.0" yPosition="1343.0">
+      <Fields>
+        <Field name="usuario" type="String" visibility="private"/>
+        <Field name="contrasena" type="String" visibility="private"/>
+        <Field name="trabajaEmpresa" type="int" visibility="private"/>
+        <Field name="codeVerificacion" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="usuario"/>
+          <Argument type="String" name="contrasena"/>
+          <Argument type="int" name="trabajaEmpresa"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="String" name="genero"/>
+          <Argument type="String" name="email"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="usuario"/>
+          <Argument type="String" name="contrasena"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="Autenticar" returnType="String" visibility="public"/>
+        <Method name="obtenerNombreClientePorUsuario" returnType="String" visibility="public">
+          <Argument type="String" name="usuario"/>
+        </Method>
+        <Method name="obtenerGeneroClientePorUsuario" returnType="String" visibility="public">
+          <Argument type="String" name="usuario"/>
+        </Method>
+        <Method name="obtenerNombreClientePorCorreo" returnType="String" visibility="public">
+          <Argument type="String" name="correo"/>
+        </Method>
+        <Method name="autenticarCorreo" returnType="String" visibility="public">
+          <Argument type="String" name="correo"/>
+        </Method>
+        <Method name="verificarEmailExistente" returnType="String" visibility="public">
+          <Argument type="String" name="email"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ComprobanteDePago" package="logica" visibility="public" xPosition="398.0" yPosition="2392.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="comprobante" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="numeroDeLaOrden"/>
+          <Argument type="String" name="nombreApellido"/>
+          <Argument type="String" name="fechaDelVuelo"/>
+          <Argument type="String" name="vueloNumero"/>
+          <Argument type="String" name="asientoDesignado"/>
+          <Argument type="String" name="numeroReserva"/>
+          <Argument type="String" name="codigoDeLaReserva"/>
+          <Argument type="String" name="horaDesignadaDelIncioDelEmbarque"/>
+          <Argument type="String" name="horaDesignadaDelFinDelEmbarque"/>
+          <Argument type="int" name="numeroDeLaTerminal"/>
+          <Argument type="int" name="numeroDeLaPuerta"/>
+          <Argument type="String" name="numeroDelGrupoDeEmbarque"/>
+          <Argument type="String" name="descripcionDelEquipaje"/>
+          <Argument type="String" name="fechaDelOrigenDelVuelo"/>
+          <Argument type="String" name="horaDelOrigenDelVuelo"/>
+          <Argument type="String" name="zonaDeOrigen"/>
+          <Argument type="String" name="nombreDelAeropuertoDeOrigen"/>
+          <Argument type="String" name="fechaDelDestinoDelVuelo"/>
+          <Argument type="String" name="horaDelDestinoDelVuelo"/>
+          <Argument type="String" name="zonaDeDestino"/>
+          <Argument type="String" name="nombreDelAeropuertoDeDestino"/>
+          <Argument type="String" name="pathQR"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ConexionDB" package="logica" visibility="public" xPosition="2073.0" yPosition="1397.0">
+      <Fields>
+        <Field name="connection" type="Connection" visibility="package" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Configuraciones" package="logica" visibility="public" xPosition="372.0" yPosition="2000.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="llenarComboBoxDestino" returnType="void" visibility="public">
+          <Argument type="JComboBox&lt;String&gt;" name="comboBox"/>
+        </Method>
+        <Method name="llenarComboBoxOrigen" returnType="void" visibility="public">
+          <Argument type="JComboBox&lt;String&gt;" name="comboBox"/>
+        </Method>
+        <Method name="registrarCliente" returnType="void" visibility="public">
+          <Argument type="String" name="nombres"/>
+          <Argument type="String" name="apellidos"/>
+          <Argument type="String" name="email"/>
+          <Argument type="String" name="usuario"/>
+          <Argument type="String" name="contrasena"/>
+          <Argument type="String" name="genero"/>
+        </Method>
+        <Method name="obtenerCodigoVerificacion" returnType="String" visibility="public">
+          <Argument type="String" name="email"/>
+        </Method>
+        <Method name="actualizarCodigoVerificacion" returnType="void" visibility="public">
+          <Argument type="String" name="email"/>
+          <Argument type="String" name="nuevoCodigo"/>
+        </Method>
+        <Method name="actualizarContrasena" returnType="void" visibility="public">
+          <Argument type="String" name="email"/>
+          <Argument type="char[]" name="contrasena"/>
+        </Method>
+        <Method name="standarCodigoVerificacion" returnType="void" visibility="public">
+          <Argument type="String" name="email"/>
+        </Method>
+        <Method name="isValidEmail" returnType="boolean" visibility="public">
+          <Argument type="String" name="email"/>
+        </Method>
+        <Method name="isStrongPassword" returnType="boolean" visibility="public">
+          <Argument type="char[]" name="password"/>
+        </Method>
+        <Method name="insertarCliente" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="String" name="email"/>
+          <Argument type="String" name="usuario"/>
+          <Argument type="char[]" name="contrasena"/>
+          <Argument type="String" name="genero"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Destino" package="logica" visibility="public" xPosition="1867.0" yPosition="180.0">
+      <Fields>
+        <Field name="nombreDestino" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombreDestino"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="GenerarQR" package="logica" visibility="public" xPosition="1981.0" yPosition="1807.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="generarQR" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="texto"/>
+          <Argument type="String" name="rutaCompleta"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Persona" package="logica" visibility="public" xPosition="920.0" yPosition="899.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="apellido" type="String" visibility="private"/>
+        <Field name="genero" type="String" visibility="private"/>
+        <Field name="email" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="String" name="genero"/>
+          <Argument type="String" name="email"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getApellido" returnType="String" visibility="public"/>
+        <Method name="setApellido" returnType="void" visibility="public">
+          <Argument type="String" name="apellido"/>
+        </Method>
+        <Method name="getGenero" returnType="String" visibility="public"/>
+        <Method name="setGenero" returnType="void" visibility="public">
+          <Argument type="String" name="genero"/>
+        </Method>
+        <Method name="getEmail" returnType="String" visibility="public"/>
+        <Method name="setEmail" returnType="void" visibility="public">
+          <Argument type="String" name="email"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Reserva" package="logica" visibility="public" xPosition="256.0" yPosition="861.0">
+      <Fields>
+        <Field name="cliente" type="Cliente" visibility="private"/>
+        <Field name="vuelo" type="Vuelo" visibility="private"/>
+        <Field name="fechaReserva" type="Date" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Cliente" name="cliente"/>
+          <Argument type="Vuelo" name="vuelo"/>
+          <Argument type="Date" name="fechaReserva"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="ReservaDestino" package="logica" visibility="public" xPosition="1347.0" yPosition="1683.0">
+      <Fields>
+        <Field name="cliente" type="Cliente" visibility="private"/>
+        <Field name="destino" type="Destino" visibility="private"/>
+        <Field name="fechaReserva" type="Date" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Cliente" name="cliente"/>
+          <Argument type="Destino" name="destino"/>
+          <Argument type="Date" name="fechaReserva"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Vuelo" package="logica" visibility="public" xPosition="814.0" yPosition="581.0">
+      <Fields>
+        <Field name="origen" type="String" visibility="private"/>
+        <Field name="destino" type="Destino" visibility="private"/>
+        <Field name="fecha" type="Date" visibility="private"/>
+        <Field name="hora" type="String" visibility="private"/>
+        <Field name="capacidad" type="int" visibility="private"/>
+        <Field name="precio" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="origen"/>
+          <Argument type="Destino" name="destino"/>
+          <Argument type="Date" name="fecha"/>
+          <Argument type="String" name="hora"/>
+          <Argument type="int" name="capacidad"/>
+          <Argument type="double" name="precio"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="destino" source="logica.ReservaDestino" target="logica.Destino" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="vuelo" source="logica.Asiento" target="logica.Vuelo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="logica.Cliente" target="logica.Persona"/>
+    <HasRelation name="cliente" source="logica.Reserva" target="logica.Cliente" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="destino" source="logica.Vuelo" target="logica.Destino" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="cliente" source="logica.ReservaDestino" target="logica.Cliente" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="vuelo" source="logica.Reserva" target="logica.Vuelo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

@@ -185,6 +185,4 @@ public class ComprobanteDePago {
         graphics2D.dispose();
         document.close();
     }
-
-    
 }

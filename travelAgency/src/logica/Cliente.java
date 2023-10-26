@@ -166,4 +166,38 @@ public class Cliente extends Persona {
         }
         return rpta;
     }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public String getContrasena() {
+        return contrasena;
+    }
+
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
+    }
+
+    public int getTrabajaEmpresa() {
+        return trabajaEmpresa;
+    }
+
+    public void setTrabajaEmpresa(int trabajaEmpresa) {
+        this.trabajaEmpresa = trabajaEmpresa;
+    }
+
+    public int getCodeVerificacion() {
+        return codeVerificacion;
+    }
+
+    public void setCodeVerificacion(int codeVerificacion) {
+        this.codeVerificacion = codeVerificacion;
+    }
+    
+    
 }

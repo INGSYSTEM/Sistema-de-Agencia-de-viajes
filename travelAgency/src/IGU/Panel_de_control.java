@@ -1,6 +1,8 @@
 package IGU;
 
+import java.sql.SQLException;
 import javax.swing.ImageIcon;
+import logica.Configuraciones;
 
 
 /**
@@ -8,10 +10,28 @@ import javax.swing.ImageIcon;
  * @author Juan Romero
  */
 public class Panel_de_control extends javax.swing.JFrame {
-
+    Configuraciones configuraciones = new Configuraciones();
     public void ColocarNombre (String Mensaje)
     {
         label_nombreUsuario.setText(Mensaje);
+    }
+    
+    static int cargo;
+    
+    public void obtenerNombre (String nombre) throws ClassNotFoundException, SQLException {
+        cargo = configuraciones.detectarCargo(nombre);
+        switch (cargo) {
+            case 1 -> {
+                System.out.println("Soy cliente");
+            }
+            case 2 -> {
+                System.out.println("Soy Empleado");
+            }
+            case 3 -> {
+                System.out.println("Soy Administrador");
+            }
+            default -> System.out.println("No es un cargo valido.");
+        }
     }
     
     public void colorcarAvatar (String genero) {
@@ -20,7 +40,8 @@ public class Panel_de_control extends javax.swing.JFrame {
     /**
      * Creates new form Panel_de_control
      */
-    public Panel_de_control() {
+    
+    public Panel_de_control() throws ClassNotFoundException, ClassNotFoundException, SQLException, SQLException {
         initComponents();
         setIconImage(new ImageIcon(getClass().getResource("/favicon/Nuevo_logo_de_Luminous_Horizons.png")).getImage());
         this.setResizable(false);
